@@ -5,77 +5,147 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>FKS Media — Uluslararası İlişkiler ve Stratejik Analiz</title>
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f8fa;--fg:#14202b;--mut:#5d6b78;--card:#fff;--line:#dde4ea;--acc:#0b5f8a;--dk:#0e2233}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1720;--fg:#e8edf2;--mut:#93a1ae;--card:#16212c;--line:#263543;--acc:#5bb4e0;--dk:#0a121a}}
-:root[data-theme="dark"]{--bg:#0f1720;--fg:#e8edf2;--mut:#93a1ae;--card:#16212c;--line:#263543;--acc:#5bb4e0;--dk:#0a121a}
-html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f8fa;--fg:#14202b;--mut:#5d6b78;--card:#fff;--line:#dde4ea;--acc:#0b5f8a;--gold:#b4975a;--dk:#0e2233}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1720;--fg:#e8edf2;--mut:#93a1ae;--card:#16212c;--line:#263543;--acc:#5bb4e0;--gold:#d4b87a;--dk:#0a121a}}
+:root[data-theme="dark"]{--bg:#0f1720;--fg:#e8edf2;--mut:#93a1ae;--card:#16212c;--line:#263543;--acc:#5bb4e0;--gold:#d4b87a;--dk:#0a121a}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 106px);scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:inherit}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:10}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:12}
 a{color:inherit}
-.w{max-width:1040px;margin:0 auto;padding:0 20px}
+.w{max-width:1060px;margin:0 auto;padding:0 20px}
+
+/* Header & Logo */
 #top{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--card);border-bottom:1px solid var(--line)}
 #top .w{display:flex;align-items:center;gap:20px;height:64px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;text-decoration:none;color:var(--acc);margin-right:auto;letter-spacing:-0.02em}
-.logo img{height:36px;width:auto;border-radius:6px;object-fit:contain}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto}
+.logo-mark{width:38px;height:38px;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text strong{font-family:Georgia,"Times New Roman",serif;font-weight:800;font-size:21px;color:var(--fg);letter-spacing:0.03em}
+.logo-text span{font-size:9.5px;font-weight:700;letter-spacing:0.28em;color:var(--gold);margin-top:3px;text-transform:uppercase}
+
 #top nav{display:flex;align-items:center;gap:18px;font-size:14px;font-weight:600}
 #top nav a{text-decoration:none;color:var(--mut);transition:color 0.2s}
 #top nav a:hover{color:var(--acc)}
 .lang-sw{display:flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px}
 .lang-btn{font:700 12px/1 system-ui,sans-serif;padding:6px 10px;border-radius:6px;border:none;background:transparent;color:var(--mut);cursor:pointer;transition:all 0.2s}
 .lang-btn.active{background:var(--acc);color:#fff}
+
+/* Currency Ticker Bar */
+.ticker-bar{background:var(--dk);color:#e8edf2;border-bottom:1px solid rgba(255,255,255,0.08);font-size:12.5px}
+.ticker-bar .w{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:8px;padding-bottom:8px;overflow-x:auto;scrollbar-width:none}
+.ticker-bar .w::-webkit-scrollbar{display:none}
+.ticker-label{font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#9fd6f2;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.ticker-label::before{content:"";width:7px;height:7px;border-radius:50%;background:#38bdf8;display:inline-block}
+.ticker-list{display:flex;align-items:center;gap:18px;white-space:nowrap}
+.rate-item{display:inline-flex;align-items:center;gap:5px;font-variant-numeric:tabular-nums}
+.rate-item b{color:#fff;font-weight:700}
+.rate-item span{color:#cbd5e1}
+.rate-up{color:#4ade80;font-size:10px}
+.rate-eq{color:#94a3b8;font-size:10px}
+
 [hidden]{display:none!important}
-.hero{background:linear-gradient(135deg,var(--dk),#0b5f8a);color:#fff;padding:84px 0 76px}
+.hero{background:linear-gradient(135deg,var(--dk),#0b5f8a);color:#fff;padding:78px 0 70px}
 .hero .slogan{display:inline-block;letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:12px;color:#9fd6f2;background:rgba(255,255,255,0.08);padding:6px 12px;border-radius:6px;margin-bottom:14px}
-.hero h1{font-size:clamp(32px,6vw,50px);line-height:1.12;margin:0 0 18px;max-width:780px}
-.hero p{max-width:650px;font-size:18px;color:#d7e6f0;margin:0 0 30px}
+.hero h1{font-size:clamp(30px,5.5vw,48px);line-height:1.14;margin:0 0 18px;max-width:780px}
+.hero p{max-width:650px;font-size:17.5px;color:#d7e6f0;margin:0 0 28px}
 .btn{display:inline-block;padding:13px 22px;border-radius:8px;background:#fff;color:#0b5f8a;font-weight:700;text-decoration:none;transition:opacity 0.2s}
 .btn:hover{opacity:0.92}
 .btn.g{background:transparent;color:#fff;border:1px solid #ffffff80;margin-left:8px}
+
 section{padding:64px 0}
 h2.s{font-size:30px;margin:0 0 10px}
-.lead{color:var(--mut);max-width:680px;margin:0 0 30px}
+.lead{color:var(--mut);max-width:680px;margin:0 0 28px}
 .eb{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+
+/* About Header with White Logo Card */
+.about-head{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:32px}
+.about-head .lead{margin-bottom:0}
+.about-logo-box{flex-shrink:0;background:#ffffff;border:1px solid var(--line);border-radius:14px;padding:20px 28px;box-shadow:0 6px 20px rgba(14,34,51,0.06);display:flex;align-items:center;justify-content:center}
+.about-logo-box img{max-width:210px;width:100%;height:auto;display:block}
+.about-logo-fallback{display:flex;align-items:center;gap:14px}
+.about-logo-fallback svg{width:54px;height:54px}
+.about-logo-fallback div{display:flex;flex-direction:column;line-height:1}
+.about-logo-fallback strong{font-family:Georgia,"Times New Roman",serif;font-size:32px;font-weight:800;color:#0e2233;letter-spacing:0.03em}
+.about-logo-fallback span{font-size:13px;font-weight:700;letter-spacing:0.32em;color:#b4975a;margin-top:4px}
+
 .about{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .about div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px}
 .about h3{margin:0 0 8px;font-size:17px}.about p{margin:0;color:var(--mut);font-size:15px}
-#grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+
+/* Category Filter Bar */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.f-btn{font:600 13px/1 system-ui,sans-serif;padding:9px 15px;border-radius:20px;border:1px solid var(--line);background:var(--bg);color:var(--mut);cursor:pointer;transition:all 0.2s}
+.f-btn:hover{border-color:var(--acc);color:var(--acc)}
+.f-btn.active{background:var(--acc);border-color:var(--acc);color:#fff}
+
+#grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(295px,1fr))}
+.empty-cat{grid-column:1/-1;background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:36px 20px;text-align:center;color:var(--mut);font-size:15px}
 .card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;text-decoration:none;transition:transform 0.2s, border-color 0.2s}
 .card:hover{border-color:var(--acc);transform:translateY(-2px)}
-.card .thumb-wrap{height:160px;overflow:hidden;background:var(--dk)}
+.card .thumb-wrap{height:175px;overflow:hidden;background:var(--dk)}
 .card img.thumb{width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
 .card:hover img.thumb{transform:scale(1.05)}
 .card .tag{margin:16px 18px 0}
-.card h3{font-size:18px;line-height:1.3;margin:8px 18px}
+.card h3{font-size:18px;line-height:1.32;margin:8px 18px}
 .card p{margin:0 18px 14px;color:var(--mut);font-size:14px}
 .card b{margin:auto 18px 18px;color:var(--acc);font-size:14px}
 .tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+
 .cta{background:var(--dk);color:#fff;text-align:center}
 .cta p{color:#c9d6e0;margin:0 auto 22px;max-width:540px}
+
 #arts{padding:36px 0 72px}
-#back{display:inline-block;margin:28px 0 8px;font-weight:600;color:var(--acc);text-decoration:none}
-article{max-width:720px;margin:0 auto;font:18px/1.75 Georgia,"Times New Roman",serif}
-article h2{font:800 clamp(26px,5vw,36px)/1.2 system-ui,sans-serif;margin:10px 0 18px}
-article figure{margin:0 0 24px;padding:0}
-article figure img{width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:10px;display:block}
-article figcaption{font:12px/1.4 system-ui,sans-serif;color:var(--mut);margin-top:8px;text-align:center}
+#back{display:inline-block;margin:28px 0 12px;font-weight:600;color:var(--acc);text-decoration:none}
+article{max-width:740px;margin:0 auto;font:18px/1.78 Georgia,"Times New Roman",serif}
+article h2{font:800 clamp(26px,5vw,36px)/1.22 system-ui,sans-serif;margin:10px 0 18px}
+article h3{font:700 21px/1.35 system-ui,sans-serif;margin:28px 0 12px;color:var(--fg)}
+article figure{margin:0 0 26px;padding:0}
+article figure img{width:100%;height:auto;max-height:440px;object-fit:cover;border-radius:10px;display:block}
+article figcaption{font:12.5px/1.4 system-ui,sans-serif;color:var(--mut);margin-top:8px;text-align:center}
 article p{margin:0 0 16px}
-article .src{font:13px/1.6 system-ui,sans-serif;color:var(--mut);border-top:1px solid var(--line);padding-top:12px}
+article .src{font:13.5px/1.65 system-ui,sans-serif;color:var(--mut);border-top:1px solid var(--line);padding-top:16px;margin-top:28px}
+article .src ul{margin:8px 0 0;padding-left:18px}
+article .src li{margin-bottom:4px}
+
 footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
-@media(max-width:640px){#top nav{gap:10px}.btn.g{margin:10px 0 0}.logo span{font-size:16px}}
+@media(max-width:768px){
+  .about-head{flex-direction:column;align-items:flex-start}
+  .about-logo-box{width:100%}
+}
+@media(max-width:640px){
+  #top nav{gap:10px}
+  .btn.g{margin:10px 0 0}
+}
 </style>
 </head>
 <body>
+
 <header id="top">
   <div class="w">
     <a class="logo" href="#">
-      <img src="logo.jpg" alt="FKS Media" onerror="this.style.display='none'">
-      <span>FKS Media</span>
+      <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M32 3L35.5 11H28.5L32 3Z" fill="#b4975a"/>
+        <path d="M3 32L11 28.5V35.5L3 32Z" fill="#b4975a"/>
+        <path d="M61 32L53 35.5V28.5L61 32Z" fill="#b4975a"/>
+        <circle cx="32" cy="32" r="20" stroke="#b4975a" stroke-width="2.5"/>
+        <circle cx="32" cy="32" r="16.5" fill="#0b5f8a" fill-opacity="0.12" stroke="#0b5f8a" stroke-width="2"/>
+        <ellipse cx="32" cy="32" rx="8" ry="16.5" stroke="#0b5f8a" stroke-width="1.6"/>
+        <line x1="15.5" y1="32" x2="48.5" y2="32" stroke="#0b5f8a" stroke-width="1.6"/>
+        <path d="M23 41L30 29L41 23L34 35L23 41Z" fill="#0e2233"/>
+        <circle cx="32" cy="32" r="2" fill="#ffffff"/>
+        <path d="M12 46C20 51 32 51 44 45C49 42.5 53 42.5 56 44" stroke="#0b5f8a" stroke-width="3" stroke-linecap="round"/>
+        <path d="M16 51.5C24 55.5 34 55 45 49.5" stroke="#0e2233" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <strong>FKS</strong>
+        <span>MEDIA</span>
+      </div>
     </a>
     <nav>
       <a href="#" data-i18n="nav_home">Ana Sayfa</a>
       <a href="#hakkimizda" data-i18n="nav_about">Hakkımızda</a>
-      <a href="#blog" data-i18n="nav_blog">Analizler</a>
+      <a href="#blog" data-i18n="nav_blog">Gelişmeler</a>
       <div class="lang-sw">
         <button type="button" class="lang-btn active" data-setlang="tr">TR</button>
         <button type="button" class="lang-btn" data-setlang="ru">RU</button>
@@ -84,22 +154,63 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
   </div>
 </header>
 
+<div class="ticker-bar" aria-label="Güncel Döviz Kurları">
+  <div class="w">
+    <div class="ticker-label" data-i18n="ticker_title">Piyasalar (AZN)</div>
+    <div class="ticker-list">
+      <div class="rate-item"><b>USD</b> <span>1,7000</span> <span class="rate-eq">▲</span></div>
+      <div class="rate-item"><b>EUR</b> <span>1,9329</span> <span class="rate-up">▲</span></div>
+      <div class="rate-item"><b>GBP</b> <span>2,2461</span> <span class="rate-up">▲</span></div>
+      <div class="rate-item"><b>RUB</b> <span>2,0000</span> <span class="rate-up">▲</span></div>
+      <div class="rate-item"><b>TRY</b> <span>0,0347</span> <span class="rate-up">▲</span></div>
+      <div class="rate-item"><b>GEL</b> <span>0,6513</span> <span class="rate-up">▲</span></div>
+    </div>
+  </div>
+</div>
+
 <div id="home">
   <div class="hero">
     <div class="w">
       <div class="slogan" data-i18n="hero_slogan">Küresel dengeleri yerinde ve kaynaklı okuyun</div>
       <h1 data-i18n="hero_title">Avrasya ve dünya gündemini sade, derin ve kaynaklı analizlerle takip edin</h1>
       <p data-i18n="hero_desc">FKS Media; Orta Doğu, Güney Kafkasya ve küresel güç dengelerindeki kritik gelişmeleri bilgi kirliliğinden arındırarak doğrudan resmî ve uluslararası kaynaklara dayalı analizlere dönüştürür.</p>
-      <a class="btn" href="#blog" data-i18n="hero_btn1">Analizleri oku</a>
+      <a class="btn" href="#blog" data-i18n="hero_btn1">Gelişmeleri oku</a>
       <a class="btn g" href="#hakkimizda" data-i18n="hero_btn2">Biz kimiz?</a>
     </div>
   </div>
 
   <section id="hakkimizda">
     <div class="w">
-      <span class="eb" data-i18n="about_eb">Hakkımızda</span>
-      <h2 class="s" data-i18n="about_title">FKS Media ne yapar?</h2>
-      <p class="lead" data-i18n="about_lead">Türkiye ve BDT (Avrasya) coğrafyası başta olmak üzere uluslararası siyaset, enerji koridorları ve diplomasi trafiğini çok dilli ve tarafsız bir perspektifle inceliyoruz.</p>
+      <div class="about-head">
+        <div>
+          <span class="eb" data-i18n="about_eb">Hakkımızda</span>
+          <h2 class="s" data-i18n="about_title">FKS Media ne yapar?</h2>
+          <p class="lead" data-i18n="about_lead">Türkiye ve BDT (Avrasya) coğrafyası başta olmak üzere uluslararası siyaset, enerji koridorları ve diplomasi trafiğini çok dilli ve tarafsız bir perspektifle inceliyoruz.</p>
+        </div>
+        <div class="about-logo-box">
+          <img src="logo.jpg" alt="FKS Media Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="about-logo-fallback" style="display:none">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 3L35.5 11H28.5L32 3Z" fill="#b4975a"/>
+              <path d="M3 32L11 28.5V35.5L3 32Z" fill="#b4975a"/>
+              <path d="M61 32L53 35.5V28.5L61 32Z" fill="#b4975a"/>
+              <circle cx="32" cy="32" r="20" stroke="#b4975a" stroke-width="2.5"/>
+              <circle cx="32" cy="32" r="16.5" fill="#0b5f8a" fill-opacity="0.12" stroke="#0b5f8a" stroke-width="2"/>
+              <ellipse cx="32" cy="32" rx="8" ry="16.5" stroke="#0b5f8a" stroke-width="1.6"/>
+              <line x1="15.5" y1="32" x2="48.5" y2="32" stroke="#0b5f8a" stroke-width="1.6"/>
+              <path d="M23 41L30 29L41 23L34 35L23 41Z" fill="#0e2233"/>
+              <circle cx="32" cy="32" r="2" fill="#ffffff"/>
+              <path d="M12 46C20 51 32 51 44 45C49 42.5 53 42.5 56 44" stroke="#0b5f8a" stroke-width="3" stroke-linecap="round"/>
+              <path d="M16 51.5C24 55.5 34 55 45 49.5" stroke="#0e2233" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <strong>FKS</strong>
+              <span>MEDIA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="about">
         <div>
           <h3 data-i18n="about_c1_t">Bölgesel Derinlik</h3>
@@ -120,8 +231,9 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
   <section id="blog" style="background:var(--card)">
     <div class="w">
       <span class="eb" data-i18n="blog_eb">Yayınlar</span>
-      <h2 class="s" data-i18n="blog_title">Son analizler</h2>
-      <p class="lead"><span data-i18n="blog_lead">Dış politikanın öne çıkan başlıkları.</span> <span id="cnt"></span></p>
+      <h2 class="s" data-i18n="blog_title">Son Gelişmeler</h2>
+      <p class="lead" data-i18n="blog_lead">Dış politikanın öne çıkan başlıkları.</p>
+      <div class="filters" id="filters"></div>
       <div id="grid"></div>
     </div>
   </section>
@@ -130,91 +242,263 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
     <div class="w">
       <h2 class="s" data-i18n="cta_title">Küresel gündemi kaçırmayın</h2>
       <p data-i18n="cta_desc">FKS Media üzerinde yayınlanan en yeni jeopolitik değerlendirmelere ve bölgesel raporlara buradan ulaşabilirsiniz.</p>
-      <a class="btn" href="#blog" data-i18n="cta_btn">Tüm analizlere git</a>
+      <a class="btn" href="#blog" data-i18n="cta_btn">Tüm gelişmelere git</a>
     </div>
   </section>
 </div>
 
 <main id="arts">
   <div class="w">
-    <a id="back" href="#blog" hidden data-i18n="back_btn">← Tüm analizler</a>
+    <a id="back" href="#blog" hidden data-i18n="back_btn">← Son gelişmeler</a>
 
-    <article id="hurmuz" data-lang="all" hidden>
-      <span class="tag">Orta Doğu</span>
-      <h2>Hürmüz Boğazı düğümü: ABD–İran müzakereleri</h2>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80" alt="Hürmüz Boğazı Deniz Trafiği">
-        <figcaption>Hürmüz Boğazı, küresel petrol ve doğal gaz sevkiyatının en kritik geçiş noktalarından biri.</figcaption>
-      </figure>
-      <p>Şubat ayında başlayan savaştan bu yana Hürmüz Boğazı’ndaki deniz trafiği kısıtlı; barış sürecinin ana tıkanıklığı da burası. Barış zamanında dünya petrol ve doğal gaz sevkiyatının yaklaşık beşte biri bu dar sudan geçiyor.</p>
-      <p>İran Dışişleri Bakanlığı 2 Kasım’da, talepleri kabul edilirse planı iki gün içinde devreye alıp boğazda güvenliği yeniden sağlayabileceğini açıkladı. Tahran’ın şartları arasında yaptırımlar ve dondurulmuş varlıklar var; ayrıca ABD’nin, boğazdan geçişin ileride yönetimine dair İran–Umman anlaşmasını tanıması isteniyor.</p>
-      <p>Washington ise ABD donanmasının İran limanlarına uyguladığı ablukayı sürdürüyor. Dışişleri Bakanı Rubio, boğazın açılması karşılığında peşin yaptırım hafifletmesinin gündemde olmadığını söyledi. Eylülde İran, tarafların sırayla taviz vereceği aşamalı bir formül önermişti; fikir ayrılığı hâlâ boğazın statüsü etrafında düğümleniyor.</p>
-      <p class="src">Kaynaklar: <a href="https://www.bostonglobe.com/2026/11/02/world/iran-says-it-would-reopen-strait-hormuz-2-days-part-us-deal/">Boston Globe</a> · <a href="https://shippingtelegraph.com/shipping-reports/us-hormuz-opening-first-condition-in-talks-with-iran-no-upfront-sanctions-relief-to-iran/">Shipping Telegraph</a> · <a href="https://aljazeera.com/news/2026/8/12/iran-refutes-trumps-claim-to-control-hormuz-whats-the-latest-in-talks">Al Jazeera</a></p>
+    <!-- 1. MAKALE: HÜRMÜZ BOĞAZI (YENİLENMİŞ DETAYLI VERSİYON) -->
+    <article id="hurmuz" data-cat="orta-dogu" hidden>
+      <div class="art-tr">
+        <span class="tag">Orta Doğu</span>
+        <h2>Hürmüz Boğazı'nda düğüm: ABD ve İran arasındaki müzakerelerin temel anlaşmazlığı</h2>
+        <figure>
+          <img src="hurmuz.jpg" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'" alt="Hürmüz Boğazı Stratejik Haritası">
+          <figcaption>Hürmüz Boğazı, Basra Körfezi'ni Umman Körfezi'ne bağlayan küresel enerji güvenliğinin kilit noktasıdır.</figcaption>
+        </figure>
+        <p>Hürmüz Boğazı, Basra Körfezi'ni Umman Körfezi'ne bağlayan dar bir deniz geçidi olmasının ötesinde, küresel enerji güvenliğinin en önemli stratejik noktalarından biridir. Dünya petrol ticaretinin önemli bir bölümü bu güzergâhtan geçerken, boğazda yaşanan herhangi bir kesinti yalnızca Körfez ülkelerini değil, Avrupa'dan Asya'ya kadar uzanan geniş bir ekonomik alanı etkileyebiliyor. Bu nedenle ABD ile İran arasındaki çatışmanın merkezinde yer alan Hürmüz meselesi, bugün yalnızca bölgesel bir güvenlik sorunu değil, uluslararası ekonomi ve diplomasi açısından da belirleyici bir konu hâline gelmiş durumda.</p>
+        <p>Uluslararası Enerji Ajansı'nın (IEA) Şubat 2026 tarihli verilerine göre, 2025 yılında Hürmüz Boğazı'ndan günlük ortalama 20 milyon varil ham petrol ve petrol ürünü taşındı. Bu miktar, dünya genelindeki deniz yoluyla gerçekleştirilen petrol ticaretinin yaklaşık dörtte birine karşılık geliyor. Katar'ın sıvılaştırılmış doğal gaz (LNG) ihracatı açısından da aynı güzergâhın önemi oldukça yüksek. Dolayısıyla boğazdaki güvenlik sorunu, enerji fiyatlarından nakliye maliyetlerine ve tedarik zincirlerine kadar uzanan sonuçlar doğuruyor.</p>
+
+        <h3>Savaşın ardından Hürmüz Boğazı neden müzakerelerin merkezine yerleşti?</h3>
+        <p>Şubat 2026'da ABD ve İsrail'in İran'a yönelik askerî operasyonlarıyla başlayan savaş, Hürmüz Boğazı'ndaki deniz trafiğini ciddi biçimde etkiledi. İran'ın geçişler üzerindeki kontrolü ve ABD'nin İran limanlarına yönelik deniz ablukası, bölgedeki ticari hareketliliği daha karmaşık bir hâle getirdi.</p>
+        <p>Bununla birlikte boğazdaki trafik tamamen durmuş değil. Reuters'ın 11 Kasım tarihli haberine göre, Ekim ayında LNG taşıyan tankerlerin sayısı savaşın başlamasından bu yana en yüksek seviyeye ulaştı. Aynı dönemde gemilere yönelik saldırıların da artması, ticari hareketliliğin yeniden başlaması ile deniz güvenliğinin sağlanmasının birbirinden farklı meseleler olduğunu gösteriyor.</p>
+        <p>Bu tablo, tarafların neden Hürmüz Boğazı konusunda uzlaşmakta zorlandığını anlamak açısından önemli. Washington için temel öncelik, uluslararası deniz ticaretinin kesintisiz ve güvenli biçimde devam etmesi. Tahran açısından ise boğaz üzerindeki konumu, ABD'nin ekonomik ve askerî baskısına karşı önemli bir diplomatik müzakere aracı niteliği taşıyor.</p>
+
+        <h3>İran'ın yaklaşımı: Deniz güvenliği karşılığında ekonomik ve siyasi güvenceler</h3>
+        <p>Tahran, Hürmüz Boğazı'nın geleceğini yalnızca deniz trafiğinin yeniden açılması meselesi olarak değerlendirmiyor. İran yönetimi, ABD'nin uyguladığı ekonomik yaptırımların ve deniz ablukasının sona ermesini de müzakerelerin temel koşulları arasında görüyor.</p>
+        <p>İran Dışişleri Bakanlığı Sözcüsü İsmail Bekayi, 9 Kasım'da yaptığı açıklamada, Tahran'ın iki gün içerisinde müzakerelerin yeniden başlatılmasına imkân sağlayabilecek bir yol haritasını savundu. Reuters'ın aktardığına göre İran, görüşmelerin başlayabilmesi için ABD'nin yaptırımları ve deniz ablukasını kaldırmasını, ayrıca savaşın bütün cephelerde sona ermesini istiyor. Bu yaklaşım, daha önce gündeme getirilen yedi günlük formülün daha kısa bir zaman çerçevesine uyarlanmış hâli olarak değerlendiriliyor.</p>
+        <p>İran açısından bu taleplerin arkasında birkaç temel unsur bulunuyor. İlk olarak, yaptırımların kaldırılması ülkenin petrol ihracatı ve uluslararası ekonomik ilişkileri üzerindeki kısıtlamaların hafifletilmesi anlamına geliyor. İkinci olarak, ABD ablukasının sona ermesi İran'ın dış ticaret ve enerji ihracatını yeniden hareketlendirebilir. Üçüncü olarak ise Tahran, Hürmüz Boğazı'nın gelecekteki yönetiminde kıyıdaş devletlerin rolünün dikkate alınmasını istiyor.</p>
+        <p>Bu son konu özellikle Umman ile İran arasındaki diplomatik temaslarda öne çıkıyor. İki ülke, Haziran 2026'da yayımladıkları ortak açıklamada boğazın gelecekteki deniz trafiği yönetimi ve ilgili hizmetler konusunda ortak bir çalışma grubu oluşturma kararı aldı. Ağustos ayında ise geçici bir ortak seyir koridoru ve gelecekteki yönetim mekanizmasına ilişkin görüşmeler gündeme geldi. Ancak bu gelişmeleri, Hürmüz Boğazı'nın yönetimi konusunda kesin bir anlaşmaya varıldığı şeklinde yorumlamak doğru olmaz.</p>
+
+        <h3>Washington'ın yaklaşımı: Serbest geçiş ve stratejik baskının korunması</h3>
+        <p>ABD yönetiminin yaklaşımı ise farklı önceliklere dayanıyor. Washington, Hürmüz Boğazı'nın uluslararası deniz trafiğine açık tutulmasını ve İran'ın bu güzergâh üzerindeki kontrolünün kalıcı bir siyasi veya ekonomik avantaja dönüşmemesini istiyor. Boğazın güvenliği, Körfez ülkelerinin ekonomik istikrarı, ABD'nin bölgesel müttefikleriyle ilişkileri ve uluslararası deniz ticaretinin güvenilirliğiyle doğrudan bağlantılı.</p>
+        <p>Bunun yanında Washington, İran'a yönelik ekonomik baskıyı müzakerelerde önemli bir araç olarak korumaya çalışıyor. ABD Dışişleri Bakanı Marco Rubio'nun İran'ın taleplerine yönelik açıklamaları ve Reuters'ın 10 Kasım tarihli haberinde aktarılan G7 temasları, yönetimin yaptırımları ve deniz ablukasını sürdürme eğiliminde olduğunu gösteriyor. ABD'nin bakış açısından, boğazın yeniden açılması karşılığında önceden yaptırım tavizi verilmesi, İran'ın müzakerelerdeki konumunu güçlendirebilir.</p>
+        <p>Ancak bu yaklaşımın da bazı maliyetleri bulunuyor. Ablukanın ve askerî gerilimin devam etmesi, yalnızca İran ekonomisini değil, bölgedeki ticari faaliyetleri ve ABD'nin müttefikleriyle ilişkilerini de etkiliyor. Ayrıca uzun süreli belirsizlik, enerji piyasalarında fiyat dalgalanmalarını ve nakliye maliyetlerini artırabiliyor.</p>
+
+        <h3>Umman'ın rolü: İki taraf arasında deniz güvenliği diplomasisi</h3>
+        <p>Hürmüz Boğazı tartışmalarında Umman'ın konumu özel bir önem taşıyor. Boğazın diğer kıyıdaş ülkesi olan Umman, hem coğrafi konumu hem de İran ve diğer bölgesel aktörlerle sürdürdüğü diplomatik ilişkiler nedeniyle deniz güvenliği konusunda önemli bir aktör.</p>
+        <p>Umman Dışişleri Bakanlığı'nın 23 Haziran 2026 tarihli ortak açıklamasında, İran ve Umman'ın boğazın gelecekteki yönetimi konusunda ortak bir çalışma grubu oluşturması ve bölgedeki diğer kıyıdaş devletlerle de görüşmeler yürütmesi kararlaştırıldı. 25 Ağustos tarihli açıklamada ise geçici seyir koridoru, mayın temizliği ve kalıcı deniz ulaşım düzenlemesi gibi teknik konular ele alındı. Bununla birlikte Umman'ın girişimlerinin başarısı, ABD ve İran'ın temel anlaşmazlıklarını çözebilmesine bağlı.</p>
+
+        <h3>Uluslararası ekonomi açısından Hürmüz Boğazı</h3>
+        <p>Hürmüz Boğazı'ndaki gelişmelerin etkisi, ABD ve İran arasındaki ilişkilerin çok ötesine uzanıyor. Çin, Hindistan, Japonya ve Güney Kore gibi büyük enerji tüketicileri açısından boğazdaki güvenlik, enerji arzının sürekliliğiyle doğrudan bağlantılı. Avrupa açısından da küresel enerji piyasalarının birbirine bağlı olması nedeniyle Körfez'deki kesintiler maliyetlere yansıyor.</p>
+        <p>Suudi Arabistan ve Birleşik Arap Emirlikleri gibi ülkelerin alternatif ihracat güzergâhları bulunmasına rağmen, bu hatlar Hürmüz Boğazı'nın taşıdığı bütün ticaret hacmini karşılayabilecek kapasitede değil. Irak, Kuveyt, Katar ve İran gibi ülkelerin enerji ihracatı ise boğazın güvenliğine çok daha doğrudan bağlı.</p>
+
+        <h3>Anlaşmazlığın geleceği: Üç temel mesele</h3>
+        <p>Mevcut gelişmeler değerlendirildiğinde, müzakerelerin ilerlemesi üç temel sorunun çözümüne bağlı görünüyor: Birincisi, yaptırımlar ve deniz ablukasının hangi aşamada kaldırılacağı; ikincisi, boğazın gelecekteki yönetiminde kıyıdaş devletlerin rolü ile uluslararası seyrüsefer özgürlüğünün nasıl dengeleneceği; üçüncüsü ise saldırıların sona ermesi ve yeni bir askerî tırmanmanın önlenmesine yönelik kalıcı güvenlik güvenceleri.</p>
+
+        <h3>Sonuç: Hürmüz Boğazı yalnızca bir geçiş noktası değil</h3>
+        <p>Hürmüz Boğazı çevresindeki anlaşmazlık, uluslararası siyasette coğrafyanın, ekonomik bağımlılığın ve askerî gücün nasıl iç içe geçtiğini gösteren önemli bir örnek. Kalıcı bir çözüm yalnızca deniz trafiğinin yeniden başlamasıyla ölçülemeyecek; asıl belirleyici unsur tarafların güvenlik, egemenlik, ekonomik çıkarlar ve uluslararası deniz hukukunu aynı diplomatik çerçevede uzlaştırıp uzlaştıramayacağı olacak.</p>
+
+        <div class="src">
+          <strong>Kaynaklar ve ileri okuma:</strong>
+          <ul>
+            <li>International Energy Agency – Strait of Hormuz</li>
+            <li>Reuters – Iran defends two-day proposal for peace talks after US rejects conditions, 9 November 2026</li>
+            <li>Reuters – Hormuz traffic is up. So are the attacks, 11 November 2026</li>
+            <li>Oman Ministry of Foreign Affairs – Joint Statement between Oman and Iran, 23 June 2026</li>
+            <li>Oman Ministry of Foreign Affairs – Joint Statement following consultations, 25 August 2026</li>
+            <li>Oman Ministry of Foreign Affairs – Minister in phone call with Iranian counterpart, 5 November 2026</li>
+            <li>Reuters – Iran will make no nuclear concessions, 25 September 2026</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="art-ru" hidden>
+        <span class="tag">Ближний Восток</span>
+        <h2>Узел в Ормузском проливе: главные разногласия на переговорах США и Ирана</h2>
+        <figure>
+          <img src="hurmuz.jpg" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'" alt="Стратегическая карта Ормузского пролива">
+          <figcaption>Ормузский пролив — ключевая стратегическая артерия мировой энергетической безопасности.</figcaption>
+        </figure>
+        <p>Ормузский пролив, соединяющий Персидский и Оманский заливы, является не просто узким морским проходом, а одной из важнейших стратегических точек глобальной энергетической безопасности. Через этот маршрут проходит значительная часть мировой торговли нефтью, поэтому любые перебои затрагивают не только страны Залива, но и обширное экономическое пространство от Европы до Азии.</p>
+        <p>Согласно данным Международного энергетического агентства (МЭА) от февраля 2026 года, в 2025 году через Ормузский пролив ежедневно транспортировалось в среднем 20 миллионов баррелей сырой нефти и нефтепродуктов, что составляет около четверти всей мировой морской торговли нефтью. Столь же критичен этот маршрут и для экспорта сжиженного природного газа (СПГ) из Катара.</p>
+
+        <h3>Почему после начала войны пролив оказался в центре переговоров?</h3>
+        <p>Война, начавшаяся в феврале 2026 года с военных операций США и Израиля против Ирана, серьёзно нарушила судоходство в Ормузском проливе. Контроль Ирана над проходом и морская блокада иранских портов со стороны США усложнили коммерческую навигацию.</p>
+        <p>Тем не менее движение не остановилось полностью. По сообщению Reuters от 11 ноября, в октябре число танкеров СПГ достигло максимума с начала войны, однако параллельно участились атаки на суда. Для Вашингтона главным приоритетом остаётся бесперебойная и безопасная морская торговля, тогда как для Тегерана контроль над проливом служит важнейшим дипломатическим рычагом против экономического и военного давления США.</p>
+
+        <h3>Подход Ирана: экономические и политические гарантии в обмен на безопасность</h3>
+        <p>Тегеран рассматривает будущее пролива в увязке со снятием экономических санкций США и прекращением морской блокады. Официальный представитель МИД Ирана Исмаил Багаи 9 ноября заявил о дорожной карте, позволяющей возобновить переговоры в течение двух дней при условии снятия санкций, отмены блокады и прекращения боевых действий на всех фронтах.</p>
+        <p>Кроме того, Тегеран настаивает на учёте роли прибрежных государств в будущем управлении проливом. В июне и августе 2026 года Иран и Оман объявили о создании совместной рабочей группы по управлению судоходством и обсудили временный навигационный коридор, однако окончательного соглашения пока не достигнуто.</p>
+
+        <h3>Подход Вашингтона: свобода судоходства и сохранение давления</h3>
+        <p>Вашингтон стремится сохранить Ормузский пролив открытым для международного судоходства, не допуская превращения географического положения Ирана в постоянный политический или экономический рычаг. Заявления госсекретаря США Марко Рубио и консультации G7 указывают на намерение администрации сохранять санкции и морскую блокаду до достижения предметных уступок.</p>
+        <p>Вместе с тем сохранение напряжённости несёт издержки и для союзников США в регионе, провоцируя волатильность цен на энергоносители и рост фрахтовых ставок.</p>
+
+        <h3>Роль Омана: дипломатия морской безопасности</h3>
+        <p>Будучи вторым прибрежным государством пролива, Оман играет ключевую посредническую роль. В совместных заявлениях от 23 июня и 25 августа 2026 года Маскат и Тегеран затронули технические вопросы разминирования, временного коридора и постоянного регулирования судоходства. Однако успех этих инициатив напрямую зависит от урегулирования базовых противоречий между США и Ираном.</p>
+
+        <h3>Значение для мировой экономики</h3>
+        <p>Крупнейшие азиатские импортёры — Китай, Индия, Япония и Южная Корея — критически зависят от поставок нефти и СПГ из Персидского залива. Хотя Саудовская Аравия и ОАЭ располагают альтернативными трубопроводами, их мощностей недостаточно для замещения всего объёма перевозок через Ормуз, а экспорт Ирака, Кувейта, Катара и Ирана напрямую привязан к проливу.</p>
+
+        <h3>Будущее урегулирования: три ключевых вопроса</h3>
+        <p>Дальнейший прогресс переговоров зависит от трёх факторов: последовательности снятия санкций и морской блокады; баланса между ролью прибрежных государств и международным морским правом (свободой судоходства); а также надёжных гарантий прекращения атак на суда.</p>
+
+        <h3>Заключение</h3>
+        <p>Кризис вокруг Ормузского пролива наглядно демонстрирует тесное переплетение географии, экономики и военной силы в мировой политике. Устойчивое решение потребует согласования вопросов безопасности, суверенитета, экономических интересов и международного морского права в единой дипломатической рамке.</p>
+
+        <div class="src">
+          <strong>Источники и дополнительная литература:</strong>
+          <ul>
+            <li>International Energy Agency – Strait of Hormuz</li>
+            <li>Reuters – Iran defends two-day proposal for peace talks after US rejects conditions, 9 November 2026</li>
+            <li>Reuters – Hormuz traffic is up. So are the attacks, 11 November 2026</li>
+            <li>Oman Ministry of Foreign Affairs – Joint Statement between Oman and Iran, 23 June 2026</li>
+            <li>Oman Ministry of Foreign Affairs – Joint Statement following consultations, 25 August 2026</li>
+            <li>Oman Ministry of Foreign Affairs – Minister in phone call with Iranian counterpart, 5 November 2026</li>
+            <li>Reuters – Iran will make no nuclear concessions, 25 September 2026</li>
+          </ul>
+        </div>
+      </div>
     </article>
 
-    <article id="secim" data-lang="all" hidden>
-      <span class="tag">ABD</span>
-      <h2>Kongre el değiştirdi: Washington’da dış politika dengesi</h2>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1000&q=80" alt="ABD Kongre Binası Washington">
-        <figcaption>Washington'daki güç dengeleri ara seçimlerin ardından yeniden şekilleniyor.</figcaption>
-      </figure>
-      <p>3 Kasım ara seçimlerinde Demokratlar hem Temsilciler Meclisi’ni hem Senato’yu kazandı. Reuters’a göre Başkan Trump, İran savaşının yenilgide rol oynadığını kabul etti. Bir çıkış anketine göre seçmenlerin yaklaşık dörtte üçü savaşı oylarında “çok önemli” ya da “önemli” bir etken olarak gördü.</p>
-      <p>Demokratlar, veto edilen bir yasayı aşmak için gereken üçte iki çoğunluktan uzak. Dolayısıyla Beyaz Saray dış politikada hâlâ geniş bir inisiyatife sahip; ancak bütçe, komite başkanlıkları, soruşturmalar ve atamalar artık Demokratların elinde. Ekim ayında Meclis, dört Cumhuriyetçi’nin desteğiyle savaş yetkilerini sınırlayan bir tasarıyı zaten oylamıştı; Senato aynı adımı atmamıştı.</p>
-      <p>Analistler değişimin çoğunlukla marjinal kalacağı görüşünde: Trump’ın temel çizgisini değiştirmesi beklenmiyor, ama yeni stratejiler çok daha pahalı bir siyasi bedelle uygulanacak.</p>
-      <p class="src">Kaynaklar: <a href="https://arynews.tv/trump-acknowledges-role-of-iran-war-in-democratic-sweep-in-midterm-elections">Reuters (ARY)</a> · <a href="https://www.cfr.org/articles/democrats-win-control-of-congress-heres-how-that-could-affect-u-s-foreign-policy">CFR</a> · <a href="https://responsiblestatecraft.org/midterm-elections-2026-results/">Responsible Statecraft</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></p>
+    <!-- 2. MAKALE: ABD -->
+    <article id="secim" data-cat="abd" hidden>
+      <div class="art-tr">
+        <span class="tag">ABD</span>
+        <h2>Kongre el değiştirdi: Washington’da dış politika dengesi</h2>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1000&q=80" alt="ABD Kongre Binası Washington">
+          <figcaption>Washington'daki güç dengeleri ara seçimlerin ardından yeniden şekilleniyor.</figcaption>
+        </figure>
+        <p>3 Kasım ara seçimlerinde Demokratlar hem Temsilciler Meclisi’ni hem Senato’yu kazandı. Reuters’a göre Başkan Trump, İran savaşının yenilgide rol oynadığını kabul etti. Bir çıkış anketine göre seçmenlerin yaklaşık dörtte üçü savaşı oylarında “çok önemli” ya da “önemli” bir etken olarak gördü.</p>
+        <p>Demokratlar, veto edilen bir yasayı aşmak için gereken üçte iki çoğunluktan uzak. Dolayısıyla Beyaz Saray dış politikada hâlâ geniş bir inisiyatife sahip; ancak bütçe, komite başkanlıkları, soruşturmalar ve atamalar artık Demokratların elinde. Ekim ayında Meclis, dört Cumhuriyetçi’nin desteğiyle savaş yetkilerini sınırlayan bir tasarıyı zaten oylamıştı; Senato aynı adımı atmamıştı.</p>
+        <p>Analistler değişimin çoğunlukla marjinal kalacağı görüşünde: Trump’ın temel çizgisini değiştirmesi beklenmiyor, ama yeni stratejiler çok daha pahalı bir siyasi bedelle uygulanacak.</p>
+        <div class="src"><strong>Kaynaklar:</strong> <a href="https://arynews.tv/trump-acknowledges-role-of-iran-war-in-democratic-sweep-in-midterm-elections">Reuters (ARY)</a> · <a href="https://www.cfr.org/articles/democrats-win-control-of-congress-heres-how-that-could-affect-u-s-foreign-policy">CFR</a> · <a href="https://responsiblestatecraft.org/midterm-elections-2026-results/">Responsible Statecraft</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></div>
+      </div>
+
+      <div class="art-ru" hidden>
+        <span class="tag">США</span>
+        <h2>Смена власти в Конгрессе: баланс внешней политики в Вашингтоне</h2>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1000&q=80" alt="Капитолий США в Вашингтоне">
+          <figcaption>Баланс сил в Вашингтоне перестраивается после промежуточных выборов.</figcaption>
+        </figure>
+        <p>На промежуточных выборах 3 ноября демократы получили контроль как над Палатой представителей, так и над Сенатом. По данным Reuters, президент Трамп признал, что война с Ираном сыграла свою роль в поражении республиканцев. Согласно экзитполам, около трёх четвертей избирателей назвали войну «очень важным» или «важным» фактором при голосовании.</p>
+        <p>У демократов нет квалифицированного большинства в две трети голосов для преодоления президентского вето, поэтому Белый дом сохраняет широкую инициативу во внешней политике. Однако контроль над бюджетом, председательство в комитетах, расследования и утверждение назначений переходят к демократам.</p>
+        <p>Аналитики полагают, что изменения будут носить скорее сдерживающий характер: от Трампа не ждут смены базового курса, но реализация новых стратегий обойдётся администрации значительно дороже в политическом плане.</p>
+        <div class="src"><strong>Источники:</strong> <a href="https://arynews.tv/trump-acknowledges-role-of-iran-war-in-democratic-sweep-in-midterm-elections">Reuters (ARY)</a> · <a href="https://www.cfr.org/articles/democrats-win-control-of-congress-heres-how-that-could-affect-u-s-foreign-policy">CFR</a> · <a href="https://responsiblestatecraft.org/midterm-elections-2026-results/">Responsible Statecraft</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></div>
+      </div>
     </article>
 
-    <article id="ukrayna" data-lang="all" hidden>
-      <span class="tag">Avrupa</span>
-      <h2>Abu Dabi’de yeniden masa: Ukrayna–Rusya görüşmeleri</h2>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=80" alt="Diplomatik Müzakere Masası">
-        <figcaption>Abu Dabi'deki diplomasi trafiğinde kritik başlık güvenlik garantileri.</figcaption>
-      </figure>
-      <p>ABD Özel Temsilcisi Steve Witkoff, ABD arabuluculuğunda Ukrayna ve Rusya heyetlerinin 10–11 Kasım’da Abu Dabi’de bir araya geleceğini duyurdu. Gündemde savaşın sona erdirilmesi, savaş sonrası güvenlik düzenlemeleri, gerilimin azaltılması ve insani adımlar var. ABD tarafını Witkoff ile Jared Kushner temsil edecek.</p>
-      <p>Görüşmeler, Şubat ayında İran savaşı nedeniyle kesintiye uğrayan diplomasiyi yeniden başlatıyor. Daha önce Ocak–Şubat aylarında Abu Dabi’de iki, Şubat’ta Cenevre’de bir tur yapılmıştı. Yeni tur, Witkoff’un Putin ile yaptığı son temasların ardından geliyor.</p>
-      <p>Toplantı çalışma düzeyinde; devlet başkanları katılmayacak. Savaş sonrası güvenlik garantileri ise Kiev ve Moskova’nın en keskin ayrıştığı başlıklardan biri olmayı sürdürüyor.</p>
-      <p class="src">Kaynaklar: <a href="https://www.khaleejtimes.com/us-mediate-russia-ukraine-talks-abu-dhabi-november-witkoff">Khaleej Times</a> · <a href="https://www.kyivpost.com/post/88971">Kyiv Post</a> · <a href="https://www.axios.com/2026/11/03/us-russia-ukraine-peace-talks-uae-trump-witkoff-kushner">Axios</a></p>
+    <!-- 3. MAKALE: AVRUPA -->
+    <article id="ukrayna" data-cat="avrupa" hidden>
+      <div class="art-tr">
+        <span class="tag">Avrupa</span>
+        <h2>Abu Dabi’de yeniden masa: Ukrayna–Rusya görüşmeleri</h2>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=80" alt="Diplomatik Müzakere Masası">
+          <figcaption>Abu Dabi'deki diplomasi trafiğinde kritik başlık güvenlik garantileri.</figcaption>
+        </figure>
+        <p>ABD Özel Temsilcisi Steve Witkoff, ABD arabuluculuğunda Ukrayna ve Rusya heyetlerinin 10–11 Kasım’da Abu Dabi’de bir araya geleceğini duyurdu. Gündemde savaşın sona erdirilmesi, savaş sonrası güvenlik düzenlemeleri, gerilimin azaltılması ve insani adımlar var. ABD tarafını Witkoff ile Jared Kushner temsil edecek.</p>
+        <p>Görüşmeler, Şubat ayında İran savaşı nedeniyle kesintiye uğrayan diplomasiyi yeniden başlatıyor. Daha önce Ocak–Şubat aylarında Abu Dabi’de iki, Şubat’ta Cenevre’de bir tur yapılmıştı. Yeni tur, Witkoff’un Putin ile yaptığı son temasların ardından geliyor.</p>
+        <p>Toplantı çalışma düzeyinde; devlet başkanları katılmayacak. Savaş sonrası güvenlik garantileri ise Kiev ve Moskova’nın en keskin ayrıştığı başlıklardan biri olmayı sürdürüyor.</p>
+        <div class="src"><strong>Kaynaklar:</strong> <a href="https://www.khaleejtimes.com/us-mediate-russia-ukraine-talks-abu-dhabi-november-witkoff">Khaleej Times</a> · <a href="https://www.kyivpost.com/post/88971">Kyiv Post</a> · <a href="https://www.axios.com/2026/11/03/us-russia-ukraine-peace-talks-uae-trump-witkoff-kushner">Axios</a></div>
+      </div>
+
+      <div class="art-ru" hidden>
+        <span class="tag">Европа</span>
+        <h2>Возвращение за стол в Абу-Даби: переговоры Украины и России</h2>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=80" alt="Стол дипломатических переговоров">
+          <figcaption>Ключевой темой дипломатического раунда в Абу-Даби остаются гарантии безопасности.</figcaption>
+        </figure>
+        <p>Спецпосланник США Стив Уиткофф объявил, что делегации Украины и России при посредничестве США встретятся 10–11 ноября в Абу-Даби. В повестке дня — прекращение войны, послевоенные механизмы безопасности, деэскалация и гуманитарные шаги. Американскую сторону представят Уиткофф и Джаред Кушнер.</p>
+        <p>Встреча возобновляет дипломатический процесс, прерванный в феврале из-за войны с Ираном. Ранее в январе–феврале прошли два раунда в Абу-Даби и один в Женеве. Новый раунд последовал за недавними контактами Уиткоффа с Владимиром Путиным.</p>
+        <p>Переговоры проходят на рабочем уровне без участия глав государств, а послевоенные гарантии безопасности остаются главным камнем преткновения между Киевом и Москвой.</p>
+        <div class="src"><strong>Источники:</strong> <a href="https://www.khaleejtimes.com/us-mediate-russia-ukraine-talks-abu-dhabi-november-witkoff">Khaleej Times</a> · <a href="https://www.kyivpost.com/post/88971">Kyiv Post</a> · <a href="https://www.axios.com/2026/11/03/us-russia-ukraine-peace-talks-uae-trump-witkoff-kushner">Axios</a></div>
+      </div>
     </article>
 
-    <article id="kafkasya" data-lang="all" hidden>
-      <span class="tag">Güney Kafkasya</span>
-      <h2>Güney Kafkasya’da TRIPP: teknik aşamaya geçiş</h2>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80" alt="Ulaşım ve Lojistik Koridoru">
-        <figcaption>TRIPP güzergâhı, bölgedeki lojistik ve tedarik zincirlerini yeniden şekillendiriyor.</figcaption>
-      </figure>
-      <p>ABD, Azerbaycan ve Ermenistan, 6 Kasım’daki ortak açıklamayla Trump Barış ve Refah için Uluslararası Güzergâh’ı (TRIPP) hayata geçirecek üçlü teknik planlama gruplarını kurdu. Güzergâh, Meğri çevresinde Aras Nehri ve İran sınırı boyunca uzanan yaklaşık 43 kilometrelik bir bölümü kapsıyor.</p>
-      <p>Ocak 2026’daki uygulama çerçevesine göre Ermenistan topraklarındaki altyapı Ermenistan’ın egemenliği ve yargı yetkisi altında kalacak. Ermenistan Dışişleri Bakanı Mirzoyan, ülkesinin zamanla Azerbaycan yüklerinin transit güzergâhı olacağını söyledi; Paşinyan ise barış, TRIPP ve Gürcistan’la lojistik iş birliğinin küresel tedarik zinciri krizine katkı sağlayabileceğini vurguladı.</p>
-      <p>Öte yandan Ağustos 2025’te Washington’da paraflanan barış anlaşması hâlâ imzalanmadı. Azerbaycan, anlaşmanın Ermenistan’ın yükümlülüklerini yerine getirmesine bağlı olarak imzalanacağını belirtiyor. Finansman, uygulama ayrıntıları, İran’ın tutumu ve Ermenistan’ın iç siyaseti, analistlerin öne çıkardığı belirsizlikler.</p>
-      <p class="src">Kaynaklar: <a href="https://news.am/en/news/1073257">News.am</a> · <a href="https://www.pan.am/en/627212">PAN.am</a> · <a href="https://oilprice.com/Geopolitics/Asia/Armenia-Azerbaijan-Peace-Plan-Stalls-One-Year-After-Washington-Breakthrough.html">OilPrice</a> · <a href="https://carnegieendowment.org/research/2026/03/rewiring-the-south-caucasus-tripp-and-the-new-geopolitics-of-connectivity">Carnegie</a></p>
+    <!-- 4. MAKALE: GÜNEY KAFKASYA -->
+    <article id="kafkasya" data-cat="guney-kafkasya" hidden>
+      <div class="art-tr">
+        <span class="tag">Güney Kafkasya</span>
+        <h2>Güney Kafkasya’da TRIPP: teknik aşamaya geçiş</h2>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80" alt="Ulaşım ve Lojistik Koridoru">
+          <figcaption>TRIPP güzergâhı, bölgedeki lojistik ve tedarik zincirlerini yeniden şekillendiriyor.</figcaption>
+        </figure>
+        <p>ABD, Azerbaycan ve Ermenistan, 6 Kasım’daki ortak açıklamayla Trump Barış ve Refah için Uluslararası Güzergâh’ı (TRIPP) hayata geçirecek üçlü teknik planlama gruplarını kurdu. Güzergâh, Meğri çevresinde Aras Nehri ve İran sınırı boyunca uzanan yaklaşık 43 kilometrelik bir bölümü kapsıyor.</p>
+        <p>Ocak 2026’daki uygulama çerçevesine göre Ermenistan topraklarındaki altyapı Ermenistan’ın egemenliği ve yargı yetkisi altında kalacak. Ermenistan Dışişleri Bakanı Mirzoyan, ülkesinin zamanla Azerbaycan yüklerinin transit güzergâhı olacağını söyledi; Paşinyan ise barış, TRIPP ve Gürcistan’la lojistik iş birliğinin küresel tedarik zinciri krizine katkı sağlayabileceğini vurguladı.</p>
+        <p>Öte yandan Ağustos 2025’te Washington’da paraflanan barış anlaşması hâlâ imzalanmadı. Azerbaycan, anlaşmanın Ermenistan’ın yükümlülüklerini yerine getirmesine bağlı olarak imzalanacağını belirtiyor. Finansman, uygulama ayrıntıları, İran’ın tutumu ve Ermenistan’ın iç siyaseti, analistlerin öne çıkardığı belirsizlikler.</p>
+        <div class="src"><strong>Kaynaklar:</strong> <a href="https://news.am/en/news/1073257">News.am</a> · <a href="https://www.pan.am/en/627212">PAN.am</a> · <a href="https://oilprice.com/Geopolitics/Asia/Armenia-Azerbaijan-Peace-Plan-Stalls-One-Year-After-Washington-Breakthrough.html">OilPrice</a> · <a href="https://carnegieendowment.org/research/2026/03/rewiring-the-south-caucasus-tripp-and-the-new-geopolitics-of-connectivity">Carnegie</a></div>
+      </div>
+
+      <div class="art-ru" hidden>
+        <span class="tag">Южный Кавказ</span>
+        <h2>Проект TRIPP на Южном Кавказе: переход к техническому этапу</h2>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80" alt="Транспортно-логистический коридор">
+          <figcaption>Маршрут TRIPP перестраивает региональную логистику и цепочки поставок.</figcaption>
+        </figure>
+        <p>США, Азербайджан и Армения в совместном заявлении от 6 ноября объявили о создании трёхсторонних рабочих групп технического планирования для реализации «Международного маршрута Трампа ради мира и процветания» (TRIPP). Участок протяжённостью около 43 километров проходит в районе Мегри вдоль реки Аракс и границы с Ираном.</p>
+        <p>Согласно рамочному документу от января 2026 года, инфраструктура на территории Армении остаётся под её суверенитетом и юрисдикцией. Глава МИД Армении Мирзоян отметил, что страна со временем станет транзитным маршрутом для азербайджанских грузов, а премьер-министр Пашинян подчеркнул роль TRIPP и сотрудничества с Грузией для глобальных цепочек поставок.</p>
+        <p>В то же время мирное соглашение, парафированное в Вашингтоне в августе 2025 года, до сих пор не подписано: Баку связывает подписание с выполнением Ереваном взятых обязательств. Среди ключевых факторов неопределённости аналитики выделяют финансирование, позицию Ирана и внутриполитическую ситуацию в Армении.</p>
+        <div class="src"><strong>Источники:</strong> <a href="https://news.am/en/news/1073257">News.am</a> · <a href="https://www.pan.am/en/627212">PAN.am</a> · <a href="https://oilprice.com/Geopolitics/Asia/Armenia-Azerbaijan-Peace-Plan-Stalls-One-Year-After-Washington-Breakthrough.html">OilPrice</a> · <a href="https://carnegieendowment.org/research/2026/03/rewiring-the-south-caucasus-tripp-and-the-new-geopolitics-of-connectivity">Carnegie</a></div>
+      </div>
     </article>
 
-    <article id="arabulucu" data-lang="all" hidden>
-      <span class="tag">Diplomasi</span>
-      <h2>Arabulucu orta güçlerin yükselişi</h2>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80" alt="Uluslararası El Sıkışma ve Diplomasi">
-        <figcaption>Orta ölçekli aktörler küresel krizlerde kilit arabulucular haline geliyor.</figcaption>
-      </figure>
-      <p>Büyük güçlerin doğrudan masaya oturmakta zorlandığı dosyalarda, arabuluculuk işi orta ölçekli aktörlere kayıyor. ABD–İran hattında Katar, Umman ve Pakistan diyaloğu canlandırmaya çalışıyor; İran ise boğazın yönetimini asıl Umman’la müzakere ettiğini, ABD ile doğrudan konuşmadığını vurguluyor.</p>
-      <p>Ukrayna dosyasında da toplantı mekânı Birleşik Arap Emirlikleri. Bu tablo, Körfez ve çevresindeki ülkelerin yalnızca ev sahibi değil, sürecin yapısını belirleyen ortaklar hâline geldiğini gösteriyor.</p>
-      <p>Bu modelin gücü esneklik ve gizlilik; sınırı ise bağlayıcılık. Arabulucular masayı kurabiliyor, ancak tarafların asıl tavizlerini onların yerine veremiyor.</p>
-      <p class="src">Kaynaklar: <a href="https://www.outlookindia.com/international/iran-sets-terms-to-reopen-strait-of-hormuz-as-qatar-pushes-for-us-talks">Outlook India</a> · <a href="https://aljazeera.com/news/2026/8/13/us-iran-talks-in-deadlock-whats-the-latest">Al Jazeera</a> · <a href="https://www.khaleejtimes.com/us-mediate-russia-ukraine-talks-abu-dhabi-november-witkoff">Khaleej Times</a></p>
+    <!-- 5. MAKALE: DİPLOMASİ -->
+    <article id="arabulucu" data-cat="diplomasi" hidden>
+      <div class="art-tr">
+        <span class="tag">Diplomasi</span>
+        <h2>Arabulucu orta güçlerin yükselişi</h2>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80" alt="Uluslararası El Sıkışma ve Diplomasi">
+          <figcaption>Orta ölçekli aktörler küresel krizlerde kilit arabulucular haline geliyor.</figcaption>
+        </figure>
+        <p>Büyük güçlerin doğrudan masaya oturmakta zorlandığı dosyalarda, arabuluculuk işi orta ölçekli aktörlere kayıyor. ABD–İran hattında Katar, Umman ve Pakistan diyaloğu canlandırmaya çalışıyor; İran ise boğazın yönetimini asıl Umman’la müzakere ettiğini, ABD ile doğrudan konuşmadığını vurguluyor.</p>
+        <p>Ukrayna dosyasında da toplantı mekânı Birleşik Arap Emirlikleri. Bu tablo, Körfez ve çevresindeki ülkelerin yalnızca ev sahibi değil, sürecin yapısını belirleyen ortaklar hâline geldiğini gösteriyor.</p>
+        <p>Bu modelin gücü esneklik ve gizlilik; sınırı ise bağlayıcılık. Arabulucular masayı kurabiliyor, ancak tarafların asıl tavizlerini onların yerine veremiyor.</p>
+        <div class="src"><strong>Kaynaklar:</strong> <a href="https://www.outlookindia.com/international/iran-sets-terms-to-reopen-strait-of-hormuz-as-qatar-pushes-for-us-talks">Outlook India</a> · <a href="https://aljazeera.com/news/2026/8/13/us-iran-talks-in-deadlock-whats-the-latest">Al Jazeera</a> · <a href="https://www.khaleejtimes.com/us-mediate-russia-ukraine-talks-abu-dhabi-november-witkoff">Khaleej Times</a></div>
+      </div>
+
+      <div class="art-ru" hidden>
+        <span class="tag">Дипломатия</span>
+        <h2>Возвышение средних держав-посредников</h2>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80" alt="Международная дипломатия и переговоры">
+          <figcaption>Средние державы становятся ключевыми медиаторами в глобальных кризисах.</figcaption>
+        </figure>
+        <p>В кризисах, где великим державам сложно вести прямой диалог, посредническая роль переходит к акторам среднего уровня. На американо-иранском треке оживить переговоры пытаются Катар, Оман и Пакистан, причём Тегеран подчёркивает, что обсуждает управление проливом именно с Оманом, а не напрямую с США.</p>
+        <p>По украинскому досье площадкой переговоров выступают Объединённые Арабские Эмираты. Это показывает, что страны Залива превратились не просто в принимающую сторону, а в полноценных архитекторов переговорных форматов.</p>
+        <p>Сила этой модели — в гибкости и конфиденциальности, но её предел — отсутствие принудительной силы: посредники могут организовать стол переговоров, но не способны пойти на уступки вместо самих сторон конфликта.</p>
+        <div class="src"><strong>Источники:</strong> <a href="https://www.outlookindia.com/international/iran-sets-terms-to-reopen-strait-of-hormuz-as-qatar-pushes-for-us-talks">Outlook India</a> · <a href="https://aljazeera.com/news/2026/8/13/us-iran-talks-in-deadlock-whats-the-latest">Al Jazeera</a> · <a href="https://www.khaleejtimes.com/us-mediate-russia-ukraine-talks-abu-dhabi-november-witkoff">Khaleej Times</a></div>
+      </div>
     </article>
 
-    <article id="ekonomi" data-lang="all" hidden>
-      <span class="tag">Ekonomi ve Güvenlik</span>
-      <h2>Dış politika cüzdana dokunuyor</h2>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=80" alt="Küresel Piyasa ve Ekonomi">
-        <figcaption>Enerji fiyatları ve tedarik hatları hane bütçelerini doğrudan etkiliyor.</figcaption>
-      </figure>
-      <p>CFR’nin değerlendirmesine göre İran savaşı ve gümrük tarifeleri, akaryakıt fiyatları, market faturaları ve hane bütçeleri üzerinden doğrudan hissediliyor. Bu nedenle dış politika, bu yıl alışılmışın aksine seçmen davranışında ağırlık kazandı.</p>
-      <p>Hürmüz’deki aksama enerji piyasalarını ve deniz taşımacılığını gergin tutuyor; Güney Kafkasya’daki TRIPP gibi projeler ise tedarik zinciri güvenliği tartışmalarının bir parçası olarak okunuyor. Enerji, ticaret yolları ve güvenlik artık ayrı dosyalar değil, tek bir denklemin parçaları.</p>
-      <p>Önümüzdeki haftalarda belirleyici olacak sorular belli: Hürmüz’de aşamalı bir uzlaşı çıkacak mı, Abu Dabi’deki Ukrayna turu güvenlik garantilerinde ilerleme sağlayacak mı ve yeni Kongre dış politikaya mali ve hukuki sınırlar çizecek mi?</p>
-      <p class="src">Kaynaklar: <a href="https://www.cfr.org/articles/foreign-policy-and-the-2026-midterms-a-cfr-guide">CFR</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></p>
+    <!-- 6. MAKALE: EKONOMİ VE GÜVENLİK -->
+    <article id="ekonomi" data-cat="ekonomi" hidden>
+      <div class="art-tr">
+        <span class="tag">Ekonomi ve Güvenlik</span>
+        <h2>Dış politika cüzdana dokunuyor</h2>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=80" alt="Küresel Piyasa ve Ekonomi">
+          <figcaption>Enerji fiyatları ve tedarik hatları hane bütçelerini doğrudan etkiliyor.</figcaption>
+        </figure>
+        <p>CFR’nin değerlendirmesine göre İran savaşı ve gümrük tarifeleri, akaryakıt fiyatları, market faturaları ve hane bütçeleri üzerinden doğrudan hissediliyor. Bu nedenle dış politika, bu yıl alışılmışın aksine seçmen davranışında ağırlık kazandı.</p>
+        <p>Hürmüz’deki aksama enerji piyasalarını ve deniz taşımacılığını gergin tutuyor; Güney Kafkasya’daki TRIPP gibi projeler ise tedarik zinciri güvenliği tartışmalarının bir parçası olarak okunuyor. Enerji, ticaret yolları ve güvenlik artık ayrı dosyalar değil, tek bir denklemin parçaları.</p>
+        <p>Önümüzdeki haftalarda belirleyici olacak sorular belli: Hürmüz’de aşamalı bir uzlaşı çıkacak mı, Abu Dabi’deki Ukrayna turu güvenlik garantilerinde ilerleme sağlayacak mı ve yeni Kongre dış politikaya mali ve hukuki sınırlar çizecek mi?</p>
+        <div class="src"><strong>Kaynaklar:</strong> <a href="https://www.cfr.org/articles/foreign-policy-and-the-2026-midterms-a-cfr-guide">CFR</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></div>
+      </div>
+
+      <div class="art-ru" hidden>
+        <span class="tag">Экономика и безопасность</span>
+        <h2>Внешняя политика бьёт по кошельку</h2>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=80" alt="Глобальные рынки и экономика">
+          <figcaption>Цены на энергоносители и цепочки поставок напрямую влияют на бюджеты домохозяйств.</figcaption>
+        </figure>
+        <p>По оценке Совета по международным отношениям (CFR), война с Ираном и таможенные тарифы напрямую отражаются на ценах на топливо, стоимости продуктов и семейных бюджетах. Именно поэтому внешняя политика в этом году оказала необычно сильное влияние на поведение избирателей.</p>
+        <p>Сбои в Ормузском проливе держат в напряжении энергетические рынки и морские перевозки, а проекты вроде TRIPP на Южном Кавказе рассматриваются как часть стратегии безопасности цепочек поставок. Энергетика, торговые маршруты и безопасность стали единым уравнением.</p>
+        <p>Ключевые вопросы ближайших недель ясны: удастся ли достичь поэтапного компромисса по Ормузу, принесёт ли раунд в Абу-Даби прогресс по гарантиям безопасности для Украины и какие финансовые и правовые рамки задаст внешней политике новый состав Конгресса?</p>
+        <div class="src"><strong>Источники:</strong> <a href="https://www.cfr.org/articles/foreign-policy-and-the-2026-midterms-a-cfr-guide">CFR</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></div>
+      </div>
     </article>
   </div>
 </main>
@@ -227,17 +511,31 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
 (()=>{
   const $ = i => document.getElementById(i);
   let curLang = localStorage.getItem('fks_lang') || 'tr';
+  let curCat = 'all';
+
+  const categories = [
+    { id: 'all', tr: 'Tümü', ru: 'Все' },
+    { id: 'orta-dogu', tr: 'Orta Doğu', ru: 'Ближний Восток' },
+    { id: 'turkiye', tr: 'Türkiye', ru: 'Турция' },
+    { id: 'rusya', tr: 'Rusya', ru: 'Россия' },
+    { id: 'guney-kafkasya', tr: 'Güney Kafkasya', ru: 'Южный Кавказ' },
+    { id: 'abd', tr: 'ABD', ru: 'США' },
+    { id: 'avrupa', tr: 'Avrupa', ru: 'Европа' },
+    { id: 'diplomasi', tr: 'Diplomasi', ru: 'Дипломатия' },
+    { id: 'ekonomi', tr: 'Ekonomi ve Güvenlik', ru: 'Экономика и безопасность' }
+  ];
 
   const dict = {
     tr: {
       page_title: "FKS Media — Uluslararası İlişkiler ve Stratejik Analiz",
       nav_home: "Ana Sayfa",
       nav_about: "Hakkımızda",
-      nav_blog: "Analizler",
+      nav_blog: "Gelişmeler",
+      ticker_title: "Döviz Kurları (AZN)",
       hero_slogan: "Küresel dengeleri yerinde ve kaynaklı okuyun",
       hero_title: "Avrasya ve dünya gündemini sade, derin ve kaynaklı analizlerle takip edin",
       hero_desc: "FKS Media; Orta Doğu, Güney Kafkasya ve küresel güç dengelerindeki kritik gelişmeleri bilgi kirliliğinden arındırarak doğrudan resmî ve uluslararası kaynaklara dayalı analizlere dönüştürür.",
-      hero_btn1: "Analizleri oku",
+      hero_btn1: "Gelişmeleri oku",
       hero_btn2: "Biz kimiz?",
       about_eb: "Hakkımızda",
       about_title: "FKS Media ne yapar?",
@@ -249,25 +547,26 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
       about_c3_t: "İki Dilli Yayın (TR / RU)",
       about_c3_p: "Farklı coğrafyalardaki okuyucular arasında doğru bilgi köprüsü kurmak amacıyla içeriklerimizi Türkçe ve Rusça olarak yayınlıyoruz.",
       blog_eb: "Yayınlar",
-      blog_title: "Son analizler",
+      blog_title: "Son Gelişmeler",
       blog_lead: "Dış politikanın öne çıkan başlıkları.",
-      count_suffix: " analiz",
       read_more: "Devamını oku →",
+      empty_cat: "Bu kategori için özel analizler hazırlanmaktadır. Yakında burada yayınlanacaktır.",
       cta_title: "Küresel gündemi kaçırmayın",
       cta_desc: "FKS Media üzerinde yayınlanan en yeni jeopolitik değerlendirmelere ve bölgesel raporlara buradan ulaşabilirsiniz.",
-      cta_btn: "Tüm analizlere git",
-      back_btn: "← Tüm analizler",
+      cta_btn: "Tüm gelişmelere git",
+      back_btn: "← Son gelişmeler",
       footer_text: "© 2026 FKS Media. Tüm hakları saklıdır. Yayınlanan analizler resmî açıklamalar ve uluslararası kaynaklardan derlenmiştir."
     },
     ru: {
       page_title: "FKS Media — Международные отношения и стратегический анализ",
       nav_home: "Главная",
       nav_about: "О нас",
-      nav_blog: "Аналитика",
+      nav_blog: "События",
+      ticker_title: "Курсы валют (AZN)",
       hero_slogan: "Читайте глобальный баланс точно и с опорой на источники",
       hero_title: "Следите за повесткой Евразии и мира через глубокую и проверенную аналитику",
       hero_desc: "FKS Media очищает ключевые события на Ближнем Востоке, Южном Кавказе и в мировой политике от информационного шума, превращая их в аналитические обзоры на основе официальных и международных источников.",
-      hero_btn1: "Читать аналитику",
+      hero_btn1: "Читать обзоры",
       hero_btn2: "Кто мы?",
       about_eb: "О проекте",
       about_title: "Чем занимается FKS Media?",
@@ -279,19 +578,36 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
       about_c3_t: "Двуязычный формат (TR / RU)",
       about_c3_p: "Для создания информационного моста между читателями разных регионов мы публикуем материалы на турецком и русском языках.",
       blog_eb: "Публикации",
-      blog_title: "Последние аналитические материалы",
+      blog_title: "Последние события",
       blog_lead: "Ключевые темы внешней политики.",
-      count_suffix: " статей",
       read_more: "Читать далее →",
+      empty_cat: "Специальные аналитические материалы по этой категории готовятся и скоро будут опубликованы.",
       cta_title: "Не пропускайте глобальную повестку",
       cta_desc: "Здесь публикуются новейшие геополитические обзоры и региональные отчёты FKS Media.",
-      cta_btn: "Перейти к публикациям",
-      back_btn: "← Все материалы",
+      cta_btn: "Перейти к событиям",
+      back_btn: "← Последние события",
       footer_text: "© 2026 FKS Media. Все права защищены. Аналитические материалы подготовлены на основе официальных заявлений и международных источников."
     }
   };
 
   const arts = () => document.querySelectorAll('#arts article');
+
+  function renderFilters() {
+    const f = $('filters');
+    f.innerHTML = '';
+    categories.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'f-btn' + (curCat === cat.id ? ' active' : '');
+      btn.textContent = cat[curLang];
+      btn.addEventListener('click', () => {
+        curCat = cat.id;
+        renderFilters();
+        grid();
+      });
+      f.append(btn);
+    });
+  }
 
   function applyLang(lang) {
     curLang = lang;
@@ -308,6 +624,15 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
       if (t[k]) el.textContent = t[k];
     });
 
+    // Makale içi dil bloklarını güncelle
+    arts().forEach(a => {
+      const trBlock = a.querySelector('.art-tr');
+      const ruBlock = a.querySelector('.art-ru');
+      if (trBlock) trBlock.hidden = (lang !== 'tr');
+      if (ruBlock) ruBlock.hidden = (lang !== 'ru');
+    });
+
+    renderFilters();
     grid();
     route();
   }
@@ -319,23 +644,29 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
     const t = dict[curLang];
 
     arts().forEach(a => {
-      const artLang = a.dataset.lang || 'all';
-      if (artLang !== 'all' && artLang !== curLang) return;
+      if (curCat !== 'all' && a.dataset.cat !== curCat) return;
+      const activeBlock = a.querySelector('.art-' + curLang) || a;
       visibleCount++;
 
       const c = document.createElement('a');
       c.className = 'card';
       c.href = '#' + a.id;
-      const imgEl = a.querySelector('figure img');
+      const imgEl = activeBlock.querySelector('figure img');
       const imgSrc = imgEl ? imgEl.src : 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80';
       c.innerHTML = '<div class="thumb-wrap"><img class="thumb" src="' + imgSrc + '" alt=""></div><span class="tag"></span><h3></h3><p></p><b>' + t.read_more + '</b>';
-      c.querySelector('.tag').textContent = a.querySelector('.tag').textContent;
-      c.querySelector('h3').textContent = a.querySelector('h2').textContent;
-      const p = a.querySelector('figure ~ p') || a.querySelector('h2 ~ p');
-      c.querySelector('p').textContent = p ? p.textContent.slice(0, 140) + '…' : '';
+      c.querySelector('.tag').textContent = activeBlock.querySelector('.tag').textContent;
+      c.querySelector('h3').textContent = activeBlock.querySelector('h2').textContent;
+      const p = activeBlock.querySelector('figure ~ p') || activeBlock.querySelector('h2 ~ p');
+      c.querySelector('p').textContent = p ? p.textContent.slice(0, 145) + '…' : '';
       g.append(c);
     });
-    $('cnt').textContent = '(' + visibleCount + t.count_suffix + ')';
+
+    if (visibleCount === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'empty-cat';
+      empty.textContent = t.empty_cat;
+      g.append(empty);
+    }
   }
 
   function route() {
@@ -348,7 +679,8 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
     $('home').hidden = isA;
     if (isA) {
       scrollTo(0, 0);
-      document.title = a.querySelector('h2').textContent + ' · FKS Media';
+      const activeBlock = a.querySelector('.art-' + curLang) || a;
+      document.title = activeBlock.querySelector('h2').textContent + ' · FKS Media';
     } else {
       document.title = dict[curLang].page_title;
     }
