@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" translate="no" class="notranslate">
 <head>
 <meta charset="utf-8">
+<meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>FKS Media — Uluslararası İlişkiler ve Stratejik Analiz</title>
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f8fa;--fg:#14202b;--mut:#5d6b78;--card:#fff;--line:#dde4ea;--acc:#0b5f8a;--gold:#b4975a;--dk:#0e2233;--logo-fks:#0e2233}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f8fa;--fg:#14202b;--mut:#5d6b78;--card:#fff;--line:#dde4ea;--acc:#0b5f8a;--gold:#c5a467;--dk:#0e2233;--logo-fks:#0e2233}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1720;--fg:#e8edf2;--mut:#93a1ae;--card:#16212c;--line:#263543;--acc:#5bb4e0;--gold:#d4b87a;--dk:#0a121a;--logo-fks:#ffffff}}
 :root[data-theme="dark"]{--bg:#0f1720;--fg:#e8edf2;--mut:#93a1ae;--card:#16212c;--line:#263543;--acc:#5bb4e0;--gold:#d4b87a;--dk:#0a121a;--logo-fks:#ffffff}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 106px);scroll-behavior:smooth}
@@ -15,14 +16,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:inherit}
 .w{max-width:1060px;margin:0 auto;padding:0 20px}
 
-/* Header & Original Transparent Logo */
+/* Header & Orijinala Uyğun Sol Üst Loqo */
 #top{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--card);border-bottom:1px solid var(--line)}
-#top .w{display:flex;align-items:center;gap:20px;height:66px}
+#top .w{display:flex;align-items:center;gap:20px;height:68px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
-.logo-mark{width:42px;height:42px;flex-shrink:0}
-.logo-text{display:flex;flex-direction:column;line-height:0.95}
-.logo-text strong{font-family:Georgia,"Times New Roman",serif;font-weight:800;font-size:24px;color:var(--logo-fks);letter-spacing:0.02em}
-.logo-text span{font-size:10px;font-weight:700;letter-spacing:0.32em;color:var(--gold);margin-top:3px;text-transform:uppercase}
+.logo-mark{width:48px;height:46px;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column;line-height:0.92}
+.logo-text strong{font-family:Georgia,"Times New Roman",serif;font-weight:800;font-size:27px;color:var(--logo-fks);letter-spacing:0.01em}
+.logo-text span{font-size:10.5px;font-weight:600;letter-spacing:0.34em;color:var(--gold);margin-top:3px;text-transform:uppercase;padding-left:1px}
 
 #top nav{display:flex;align-items:center;gap:18px;font-size:14px;font-weight:600}
 #top nav a{text-decoration:none;color:var(--mut);transition:color 0.2s}
@@ -58,6 +59,12 @@ h2.s{font-size:30px;margin:0 0 10px}
 .lead{color:var(--mut);max-width:680px;margin:0 0 30px}
 .eb{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
 
+/* Hakkımızda Üst Bölüm ve Orijinal Logo.jpg */
+.about-head{display:flex;align-items:center;justify-content:space-between;gap:36px;margin-bottom:34px}
+.about-head .lead{margin-bottom:0}
+.about-brand-img{flex-shrink:0;max-width:290px;width:100%}
+.about-brand-img img{width:100%;height:auto;border-radius:12px;display:block;border:1px solid var(--line)}
+
 .about{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .about div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px}
 .about h3{margin:0 0 8px;font-size:17px}.about p{margin:0;color:var(--mut);font-size:15px}
@@ -75,7 +82,6 @@ h2.s{font-size:30px;margin:0 0 10px}
 .card .thumb-wrap{height:175px;overflow:hidden;background:var(--dk)}
 .card img.thumb{width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
 .card:hover img.thumb{transform:scale(1.05)}
-/* Crop BBC watermark on card & article for Ukraine photo */
 .card img.thumb.crop-bbc{transform:scale(1.18);transform-origin:top right}
 .card:hover img.thumb.crop-bbc{transform:scale(1.23)}
 .img-frame{overflow:hidden;border-radius:10px}
@@ -90,20 +96,30 @@ article figure img.crop-bbc{transform:scale(1.18);transform-origin:top right}
 .cta{background:var(--dk);color:#fff;text-align:center}
 .cta p{color:#c9d6e0;margin:0 auto 22px;max-width:540px}
 
+/* Tam Makale Görünümü — Ana Sayfa ile Uyumlu Modern Font */
 #arts{padding:36px 0 72px}
 #back{display:inline-block;margin:28px 0 12px;font-weight:600;color:var(--acc);text-decoration:none}
-article{max-width:740px;margin:0 auto;font:18px/1.78 Georgia,"Times New Roman",serif}
-article h2{font:800 clamp(26px,5vw,36px)/1.22 system-ui,sans-serif;margin:10px 0 18px}
-article h3{font:700 21px/1.35 system-ui,sans-serif;margin:28px 0 12px;color:var(--fg)}
+article{max-width:740px;margin:0 auto;font:16.5px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--fg)}
+article h2{font:800 clamp(26px,5vw,36px)/1.22 system-ui,-apple-system,"Segoe UI",sans-serif;margin:10px 0 20px;letter-spacing:-0.015em}
+article h3{font:700 20px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif;margin:30px 0 12px;color:var(--fg)}
 article figure{margin:0 0 26px;padding:0}
 article figure img{width:100%;height:auto;max-height:440px;object-fit:cover;border-radius:10px;display:block}
-article figcaption{font:12.5px/1.4 system-ui,sans-serif;color:var(--mut);margin-top:8px;text-align:center}
+article figcaption{font:12.5px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--mut);margin-top:8px;text-align:center}
 article p{margin:0 0 16px}
-article .src{font:13.5px/1.65 system-ui,sans-serif;color:var(--mut);border-top:1px solid var(--line);padding-top:16px;margin-top:28px}
+article .src{font:13.5px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--mut);border-top:1px solid var(--line);padding-top:16px;margin-top:28px}
 article .src ul{margin:8px 0 0;padding-left:18px}
 article .src li{margin-bottom:4px}
 
+/* Makale Sonu Ayrı Yayımlanma Tarihi Bloğu */
+article .pub-meta{margin-top:24px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:space-between;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12.5px;color:var(--mut);letter-spacing:0.03em}
+article .pub-meta span{display:inline-flex;align-items:center;gap:7px}
+article .pub-meta time{color:var(--fg);font-weight:600}
+
 footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
+@media(max-width:768px){
+  .about-head{flex-direction:column;align-items:flex-start}
+  .about-brand-img{max-width:240px}
+}
 @media(max-width:640px){
   #top nav{gap:10px}
   .btn.g{margin:10px 0 0}
@@ -115,19 +131,31 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
 <header id="top">
   <div class="w">
     <a class="logo" href="#">
-      <!-- Orijinal Loqo Vektoru: Ağ arxa fon təmizlənmiş, Qlobus + Kompas oxu + Dalğa xətləri qorunmuşdur -->
-      <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M32 3L35.5 11H28.5L32 3Z" fill="#b4975a"/>
-        <path d="M3 32L11 28.5V35.5L3 32Z" fill="#b4975a"/>
-        <path d="M61 32L53 35.5V28.5L61 32Z" fill="#b4975a"/>
-        <circle cx="32" cy="32" r="20" stroke="#b4975a" stroke-width="2.5"/>
-        <circle cx="32" cy="32" r="16.5" stroke="#1e567d" stroke-width="2"/>
-        <ellipse cx="32" cy="32" rx="8" ry="16.5" stroke="#1e567d" stroke-width="1.6"/>
-        <line x1="15.5" y1="32" x2="48.5" y2="32" stroke="#1e567d" stroke-width="1.6"/>
-        <path d="M23 41L30 29L41 23L34 35L23 41Z" fill="#1e567d"/>
-        <circle cx="32" cy="32" r="2" fill="#b4975a"/>
-        <path d="M12 46C20 51 32 51 44 45C49 42.5 53 42.5 56 44" stroke="#1e567d" stroke-width="3" stroke-linecap="round"/>
-        <path d="M16 51.5C24 55.5 34 55 45 49.5" stroke="#b4975a" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Orijinal Logo.jpg ile Birebir Uyumlu Vektör İkon -->
+      <svg class="logo-mark" viewBox="0 0 72 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Altın Kompas Yıldızı Dış Çerçevesi -->
+        <path d="M36 2L40.2 13H31.8L36 2Z" fill="#c5a467"/>
+        <path d="M3 34L14 29.8V38.2L3 34Z" fill="#c5a467"/>
+        <path d="M69 34L58 38.2V29.8L69 34Z" fill="#c5a467"/>
+        <path d="M36 62L32.5 53H39.5L36 62Z" fill="#c5a467"/>
+        <circle cx="36" cy="34" r="22" stroke="#c5a467" stroke-width="2.8"/>
+        <!-- Mavi/Lacivert Dünya Küresi -->
+        <circle cx="36" cy="34" r="18.2" fill="#174978"/>
+        <!-- Kıtalar (Beyaz/Açık Detaylar) -->
+        <path d="M24 23C27 20 32 19 35 22C37 24 34 27 31 28C28 29 25 27 24 23Z" fill="#dcebf7" fill-opacity="0.88"/>
+        <path d="M40 21C44 21 49 24 50 29C47 31 44 30 42 27C40 25 38 23 40 21Z" fill="#dcebf7" fill-opacity="0.88"/>
+        <path d="M23 33C26 32 29 35 28 40C27 44 24 46 22 43C20 39 21 35 23 33Z" fill="#dcebf7" fill-opacity="0.88"/>
+        <path d="M41 34C45 33 49 36 48 41C46 44 42 43 40 39C39 36 40 35 41 34Z" fill="#dcebf7" fill-opacity="0.88"/>
+        <!-- Meridyen ve Paralel Çizgileri -->
+        <ellipse cx="36" cy="34" rx="9" ry="18.2" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.2"/>
+        <line x1="17.8" y1="34" x2="54.2" y2="34" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.2"/>
+        <line x1="36" y1="15.8" x2="36" y2="52.2" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.2"/>
+        <!-- Çapraz Kompas İğnesi -->
+        <path d="M24 46L32.5 30.5L48 22L39.5 37.5L24 46Z" fill="#0d2b49" stroke="#ffffff" stroke-width="1.3"/>
+        <circle cx="36" cy="34" r="2.3" fill="#ffffff"/>
+        <!-- Alt İkili Dalga Şeritleri -->
+        <path d="M12 49.5C21 55.5 34 55.5 47 48.5C53 45.5 58 45.5 62 47.5" stroke="#174978" stroke-width="3.6" stroke-linecap="round"/>
+        <path d="M18 55.5C27 60.5 38 60 50 53.5C54 51.5 57 51.5 60 52.5" stroke="#c5a467" stroke-width="2.6" stroke-linecap="round"/>
       </svg>
       <div class="logo-text">
         <strong>FKS</strong>
@@ -148,7 +176,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
 
 <div class="ticker-bar" aria-label="Güncel Döviz Kurları">
   <div class="w">
-    <div class="ticker-label" data-i18n="ticker_title">Piyasalar (AZN)</div>
+    <div class="ticker-label" data-i18n="ticker_title">Döviz Kurları (AZN)</div>
     <div class="ticker-list">
       <div class="rate-item"><b>USD</b> <span>1,7000</span> <span class="rate-eq">▲</span></div>
       <div class="rate-item"><b>EUR</b> <span>1,9329</span> <span class="rate-up">▲</span></div>
@@ -173,9 +201,17 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
 
   <section id="hakkimizda">
     <div class="w">
-      <span class="eb" data-i18n="about_eb">Hakkımızda</span>
-      <h2 class="s" data-i18n="about_title">FKS Media ne yapar?</h2>
-      <p class="lead" data-i18n="about_lead">Türkiye ve BDT (Avrasya) coğrafyası başta olmak üzere uluslararası siyaset, enerji koridorları ve diplomasi trafiğini tarafsız ve analitik bir perspektifle inceliyoruz.</p>
+      <div class="about-head">
+        <div>
+          <span class="eb" data-i18n="about_eb">Hakkımızda</span>
+          <h2 class="s" data-i18n="about_title">FKS Media ne yapar?</h2>
+          <p class="lead" data-i18n="about_lead">Türkiye ve BDT (Avrasya) coğrafyası başta olmak üzere uluslararası siyaset, enerji koridorları ve diplomasi trafiğini tarafsız ve analitik bir perspektifle inceliyoruz.</p>
+        </div>
+        <!-- Orijinal logo.jpg (Ekstra beyaz kutu olmadan doğrudan kendi görseli) -->
+        <div class="about-brand-img">
+          <img src="logo.jpg" alt="FKS Media Logo">
+        </div>
+      </div>
 
       <div class="about">
         <div>
@@ -217,7 +253,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
   <div class="w">
     <a id="back" href="#blog" hidden data-i18n="back_btn">← Son gelişmeler</a>
 
-    <!-- 1. MAKALE: HÜRMÜZ BOĞAZI (YENİ HARİTA GÖRSELİ: hurmuz.jpg) -->
+    <!-- 1. MAKALE: HÜRMÜZ BOĞAZI (Tarih: 13 Kasım 2026) -->
     <article id="hurmuz" data-cat="orta-dogu" hidden>
       <div class="art-tr">
         <span class="tag">Orta Doğu</span>
@@ -271,6 +307,10 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
             <li>Reuters – Iran will make no nuclear concessions, 25 September 2026</li>
           </ul>
         </div>
+        <div class="pub-meta">
+          <span>Yayımlanma Tarihi</span>
+          <time datetime="2026-11-13">13 Kasım 2026</time>
+        </div>
       </div>
 
       <div class="art-ru" hidden>
@@ -319,10 +359,14 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
             <li>Reuters – Iran will make no nuclear concessions, 25 September 2026</li>
           </ul>
         </div>
+        <div class="pub-meta">
+          <span>Дата публикации</span>
+          <time datetime="2026-11-13">13 ноября 2026</time>
+        </div>
       </div>
     </article>
 
-    <!-- 2. MAKALE: ABD (MEVCUT GÜZEL KONGRE GÖRSELİ KORUNDU) -->
+    <!-- 2. MAKALE: ABD (Tarih: 12 Kasım 2026) -->
     <article id="secim" data-cat="abd" hidden>
       <div class="art-tr">
         <span class="tag">ABD</span>
@@ -335,6 +379,10 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
         <p>Demokratlar, veto edilen bir yasayı aşmak için gereken üçte iki çoğunluktan uzak. Dolayısıyla Beyaz Saray dış politikada hâlâ geniş bir inisiyatife sahip; ancak bütçe, komite başkanlıkları, soruşturmalar ve atamalar artık Demokratların elinde. Ekim ayında Meclis, dört Cumhuriyetçi’nin desteğiyle savaş yetkilerini sınırlayan bir tasarıyı zaten oylamıştı; Senato aynı adımı atmamıştı.</p>
         <p>Analistler değişimin çoğunlukla marjinal kalacağı görüşünde: Trump’ın temel çizgisini değiştirmesi beklenmiyor, ama yeni stratejiler çok daha pahalı bir siyasi bedelle uygulanacak.</p>
         <div class="src"><strong>Kaynaklar:</strong> <a href="https://arynews.tv/trump-acknowledges-role-of-iran-war-in-democratic-sweep-in-midterm-elections">Reuters (ARY)</a> · <a href="https://www.cfr.org/articles/democrats-win-control-of-congress-heres-how-that-could-affect-u-s-foreign-policy">CFR</a> · <a href="https://responsiblestatecraft.org/midterm-elections-2026-results/">Responsible Statecraft</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></div>
+        <div class="pub-meta">
+          <span>Yayımlanma Tarihi</span>
+          <time datetime="2026-11-12">12 Kasım 2026</time>
+        </div>
       </div>
 
       <div class="art-ru" hidden>
@@ -348,10 +396,14 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
         <p>У демократов нет квалифицированного большинства в две трети голосов для преодоления президентского вето, поэтому Белый дом сохраняет широкую инициативу во внешней политике. Однако контроль над бюджетом, председательство в комитетах, расследования и утверждение назначений переходят к демократам.</p>
         <p>Аналитики полагают, что изменения будут носить скорее сдерживающий характер: от Трампа не ждут смены базового курса, но реализация новых стратегий обойдётся администрации значительно дороже в политическом плане.</p>
         <div class="src"><strong>Источники:</strong> <a href="https://arynews.tv/trump-acknowledges-role-of-iran-war-in-democratic-sweep-in-midterm-elections">Reuters (ARY)</a> · <a href="https://www.cfr.org/articles/democrats-win-control-of-congress-heres-how-that-could-affect-u-s-foreign-policy">CFR</a> · <a href="https://responsiblestatecraft.org/midterm-elections-2026-results/">Responsible Statecraft</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></div>
+        <div class="pub-meta">
+          <span>Дата публикации</span>
+          <time datetime="2026-11-12">12 ноября 2026</time>
+        </div>
       </div>
     </article>
 
-    <!-- 3. MAKALE: AVRUPA (YENİ GÖRSEL: ukrayna.jpg — BBC LOGOSU KESİLEREK TEMİZLENDİ) -->
+    <!-- 3. MAKALE: AVRUPA (Tarih: 11 Kasım 2026) -->
     <article id="ukrayna" data-cat="avrupa" hidden>
       <div class="art-tr">
         <span class="tag">Avrupa</span>
@@ -366,6 +418,10 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
         <p>Görüşmeler, Şubat ayında İran savaşı nedeniyle kesintiye uğrayan diplomasiyi yeniden başlatıyor. Daha önce Ocak–Şubat aylarında Abu Dabi’de iki, Şubat’ta Cenevre’de bir tur yapılmıştı. Yeni tur, Witkoff’un Putin ile yaptığı son temasların ardından geliyor.</p>
         <p>Toplantı çalışma düzeyinde; devlet başkanları katılmayacak. Savaş sonrası güvenlik garantileri ise Kiev ve Moskova’nın en keskin ayrıştığı başlıklardan biri olmayı sürdürüyor.</p>
         <div class="src"><strong>Kaynaklar:</strong> <a href="https://www.khaleejtimes.com/us-mediate-russia-ukraine-talks-abu-dhabi-november-witkoff">Khaleej Times</a> · <a href="https://www.kyivpost.com/post/88971">Kyiv Post</a> · <a href="https://www.axios.com/2026/11/03/us-russia-ukraine-peace-talks-uae-trump-witkoff-kushner">Axios</a></div>
+        <div class="pub-meta">
+          <span>Yayımlanma Tarihi</span>
+          <time datetime="2026-11-11">11 Kasım 2026</time>
+        </div>
       </div>
 
       <div class="art-ru" hidden>
@@ -381,10 +437,14 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
         <p>Встреча возобновляет дипломатический процесс, прерванный в феврале из-за войны с Ираном. Ранее в январе–феврале прошли два раунда в Абу-Даби и один в Женеве. Новый раунд последовал за недавними контактами Уиткоффа с Владимиром Путиным.</p>
         <p>Переговоры проходят на рабочем уровне без участия глав государств, а послевоенные гарантии безопасности остаются главным камнем преткновения между Киевом и Москвой.</p>
         <div class="src"><strong>Источники:</strong> <a href="https://www.khaleejtimes.com/us-mediate-russia-ukraine-talks-abu-dhabi-november-witkoff">Khaleej Times</a> · <a href="https://www.kyivpost.com/post/88971">Kyiv Post</a> · <a href="https://www.axios.com/2026/11/03/us-russia-ukraine-peace-talks-uae-trump-witkoff-kushner">Axios</a></div>
+        <div class="pub-meta">
+          <span>Дата публикации</span>
+          <time datetime="2026-11-11">11 ноября 2026</time>
+        </div>
       </div>
     </article>
 
-    <!-- 4. MAKALE: GÜNEY KAFKASYA (YENİ GÖRSEL: kafkasya.jpg) -->
+    <!-- 4. MAKALE: GÜNEY KAFKASYA (Tarih: 10 Kasım 2026) -->
     <article id="kafkasya" data-cat="guney-kafkasya" hidden>
       <div class="art-tr">
         <span class="tag">Güney Kafkasya</span>
@@ -397,6 +457,10 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
         <p>Ocak 2026’daki uygulama çerçevesine göre Ermenistan topraklarındaki altyapı Ermenistan’ın egemenliği ve yargı yetkisi altında kalacak. Ermenistan Dışişleri Bakanı Mirzoyan, ülkesinin zamanla Azerbaycan yüklerinin transit güzergâhı olacağını söyledi; Paşinyan ise barış, TRIPP ve Gürcistan’la lojistik iş birliğinin küresel tedarik zinciri krizine katkı sağlayabileceğini vurguladı.</p>
         <p>Öte yandan Ağustos 2025’te Washington’da paraflanan barış anlaşması hâlâ imzalanmadı. Azerbaycan, anlaşmanın Ermenistan’ın yükümlülüklerini yerine getirmesine bağlı olarak imzalanacağını belirtiyor. Finansman, uygulama ayrıntıları, İran’ın tutumu ve Ermenistan’ın iç siyaseti, analistlerin öne çıkardığı belirsizlikler.</p>
         <div class="src"><strong>Kaynaklar:</strong> <a href="https://news.am/en/news/1073257">News.am</a> · <a href="https://www.pan.am/en/627212">PAN.am</a> · <a href="https://oilprice.com/Geopolitics/Asia/Armenia-Azerbaijan-Peace-Plan-Stalls-One-Year-After-Washington-Breakthrough.html">OilPrice</a> · <a href="https://carnegieendowment.org/research/2026/03/rewiring-the-south-caucasus-tripp-and-the-new-geopolitics-of-connectivity">Carnegie</a></div>
+        <div class="pub-meta">
+          <span>Yayımlanma Tarihi</span>
+          <time datetime="2026-11-10">10 Kasım 2026</time>
+        </div>
       </div>
 
       <div class="art-ru" hidden>
@@ -410,10 +474,14 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
         <p>Согласно рамочному документу от января 2026 года, инфраструктура на территории Армении остаётся под её суверенитетом и юрисдикцией. Глава МИД Армении Мирзоян отметил, что страна со временем станет транзитным маршрутом для азербайджанских грузов, а премьер-министр Пашинян подчеркнул роль TRIPP и сотрудничества с Грузией для глобальных цепочек поставок.</p>
         <p>В то же время мирное соглашение, парафированное в Вашингтоне в августе 2025 года, до сих пор не подписано: Баку связывает подписание с выполнением Ереваном взятых обязательств. Среди ключевых факторов неопределённости аналитики выделяют финансирование, позицию Ирана и внутриполитическую ситуацию в Армении.</p>
         <div class="src"><strong>Источники:</strong> <a href="https://news.am/en/news/1073257">News.am</a> · <a href="https://www.pan.am/en/627212">PAN.am</a> · <a href="https://oilprice.com/Geopolitics/Asia/Armenia-Azerbaijan-Peace-Plan-Stalls-One-Year-After-Washington-Breakthrough.html">OilPrice</a> · <a href="https://carnegieendowment.org/research/2026/03/rewiring-the-south-caucasus-tripp-and-the-new-geopolitics-of-connectivity">Carnegie</a></div>
+        <div class="pub-meta">
+          <span>Дата публикации</span>
+          <time datetime="2026-11-10">10 ноября 2026</time>
+        </div>
       </div>
     </article>
 
-    <!-- 5. MAKALE: DİPLOMASİ (YENİ GÖRSEL: diplomasi.jpg) -->
+    <!-- 5. MAKALE: DİPLOMASİ (Tarih: 9 Kasım 2026) -->
     <article id="arabulucu" data-cat="diplomasi" hidden>
       <div class="art-tr">
         <span class="tag">Diplomasi</span>
@@ -426,6 +494,10 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
         <p>Ukrayna dosyasında da toplantı mekânı Birleşik Arap Emirlikleri. Bu tablo, Körfez ve çevresindeki ülkelerin yalnızca ev sahibi değil, sürecin yapısını belirleyen ortaklar hâline geldiğini gösteriyor.</p>
         <p>Bu modelin gücü esneklik ve gizlilik; sınırı ise bağlayıcılık. Arabulucular masayı kurabiliyor, ancak tarafların asıl tavizlerini onların yerine veremiyor.</p>
         <div class="src"><strong>Kaynaklar:</strong> <a href="https://www.outlookindia.com/international/iran-sets-terms-to-reopen-strait-of-hormuz-as-qatar-pushes-for-us-talks">Outlook India</a> · <a href="https://aljazeera.com/news/2026/8/13/us-iran-talks-in-deadlock-whats-the-latest">Al Jazeera</a> · <a href="https://www.khaleejtimes.com/us-mediate-russia-ukraine-talks-abu-dhabi-november-witkoff">Khaleej Times</a></div>
+        <div class="pub-meta">
+          <span>Yayımlanma Tarihi</span>
+          <time datetime="2026-11-09">9 Kasım 2026</time>
+        </div>
       </div>
 
       <div class="art-ru" hidden>
@@ -439,10 +511,14 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
         <p>По украинскому досье площадкой переговоров выступают Объединённые Арабские Эмираты. Это показывает, что страны Залива превратились не просто в принимающую сторону, а в полноценных архитекторов переговорных форматов.</p>
         <p>Сила этой модели — в гибкости и конфиденциальности, но её предел — отсутствие принудительной силы: посредники могут организовать стол переговоров, но не способны пойти на уступки вместо самих сторон конфликта.</p>
         <div class="src"><strong>Источники:</strong> <a href="https://www.outlookindia.com/international/iran-sets-terms-to-reopen-strait-of-hormuz-as-qatar-pushes-for-us-talks">Outlook India</a> · <a href="https://aljazeera.com/news/2026/8/13/us-iran-talks-in-deadlock-whats-the-latest">Al Jazeera</a> · <a href="https://www.khaleejtimes.com/us-mediate-russia-ukraine-talks-abu-dhabi-november-witkoff">Khaleej Times</a></div>
+        <div class="pub-meta">
+          <span>Дата публикации</span>
+          <time datetime="2026-11-09">9 ноября 2026</time>
+        </div>
       </div>
     </article>
 
-    <!-- 6. MAKALE: EKONOMİ VE GÜVENLİK (YENİ GÖRSEL: ekonomi.jpg) -->
+    <!-- 6. MAKALE: EKONOMİ VE GÜVENLİK (Tarih: 8 Kasım 2026) -->
     <article id="ekonomi" data-cat="ekonomi" hidden>
       <div class="art-tr">
         <span class="tag">Ekonomi ve Güvenlik</span>
@@ -455,6 +531,10 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
         <p>Hürmüz’deki aksama enerji piyasalarını ve deniz taşımacılığını gergin tutuyor; Güney Kafkasya’daki TRIPP gibi projeler ise tedarik zinciri güvenliği tartışmalarının bir parçası olarak okunuyor. Enerji, ticaret yolları ve güvenlik artık ayrı dosyalar değil, tek bir denklemin parçaları.</p>
         <p>Önümüzdeki haftalarda belirleyici olacak sorular belli: Hürmüz’de aşamalı bir uzlaşı çıkacak mı, Abu Dabi’deki Ukrayna turu güvenlik garantilerinde ilerleme sağlayacak mı ve yeni Kongre dış politikaya mali ve hukuki sınırlar çizecek mi?</p>
         <div class="src"><strong>Kaynaklar:</strong> <a href="https://www.cfr.org/articles/foreign-policy-and-the-2026-midterms-a-cfr-guide">CFR</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></div>
+        <div class="pub-meta">
+          <span>Yayımlanma Tarihi</span>
+          <time datetime="2026-11-08">8 Kasım 2026</time>
+        </div>
       </div>
 
       <div class="art-ru" hidden>
@@ -468,6 +548,10 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0}
         <p>Сбои в Ормузском проливе держат в напряжении энергетические рынки и морские перевозки, а проекты вроде TRIPP на Южном Кавказе рассматриваются как часть стратегии безопасности цепочек поставок. Энергетика, торговые маршруты и безопасность стали единым уравнением.</p>
         <p>Ключевые вопросы ближайших недель ясны: удастся ли достичь поэтапного компромисса по Ормузу, принесёт ли раунд в Абу-Даби прогресс по гарантиям безопасности для Украины и какие финансовые и правовые рамки задаст внешней политике новый состав Конгресса?</p>
         <div class="src"><strong>Источники:</strong> <a href="https://www.cfr.org/articles/foreign-policy-and-the-2026-midterms-a-cfr-guide">CFR</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></div>
+        <div class="pub-meta">
+          <span>Дата публикации</span>
+          <time datetime="2026-11-08">8 ноября 2026</time>
+        </div>
       </div>
     </article>
   </div>
