@@ -15,11 +15,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:inherit}
 .w{max-width:1060px;margin:0 auto;padding:0 20px}
 
-/* Header & Orijinal Logo İle Birebir Aynı Vektör İkon */
+/* Header & Orijinal Logo İle Birebir Uyumlu Şık Vektör Loqo */
 #top{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 4px rgba(14,34,51,0.08);transition:background-color 0.25s, border-color 0.25s}
 #top .w{display:flex;align-items:center;gap:18px;height:68px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
-.logo-mark{width:48px;height:45px;flex-shrink:0}
+.logo-mark{width:46px;height:44px;flex-shrink:0}
 .logo-text{display:flex;flex-direction:column;line-height:0.92}
 .logo-text strong{font-family:Georgia,"Times New Roman",serif;font-weight:800;font-size:26px;color:var(--logo-fks);letter-spacing:0.01em}
 .logo-text span{font-size:10px;font-weight:700;letter-spacing:0.38em;color:var(--gold);margin-top:3px;text-transform:uppercase;padding-left:1px}
@@ -28,6 +28,7 @@ a{color:inherit}
 #top nav a{text-decoration:none;color:var(--mut);padding:6px 2px;border-bottom:2px solid transparent;transition:color 0.2s, border-color 0.2s}
 #top nav a:hover,#top nav a.nav-active{color:var(--acc);border-bottom-color:var(--acc)}
 
+/* Dil ve Tema Seçici Kontrolleri */
 .controls-grp{display:flex;align-items:center;gap:8px}
 .lang-sw{display:flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px}
 .lang-btn{font:700 12px/1 system-ui,sans-serif;padding:6px 10px;border-radius:6px;border:none;background:transparent;color:var(--mut);cursor:pointer;transition:all 0.2s}
@@ -75,11 +76,17 @@ h2.s{font-size:30px;margin:0 0 10px;color:var(--head-txt)}
 .about-brand-img{flex-shrink:0;max-width:290px;width:100%;background:var(--card);border-radius:12px;padding:6px;border:1px solid var(--line);box-shadow:0 3px 12px rgba(14,34,51,0.06)}
 .about-brand-img img{width:100%;height:auto;border-radius:8px;display:block}
 
-/* Hakkımızda Sayfası İçin İstediğin Özel Metin Kutusu */
+.about{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.about div{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:12px;padding:24px;box-shadow:0 3px 10px rgba(14,34,51,0.04)}
+.about h3{margin:0 0 8px;font-size:17px;color:var(--head-txt)}.about p{margin:0;color:var(--mut);font-size:15px}
+
+/* Kurumsal Detaylı Metin Alanı (Hakkımızda Sayfası İçin) */
 .about-content-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:40px;box-shadow:0 4px 16px rgba(14,34,51,0.05);margin-top:28px}
 .about-content-box h3{font-size:22px;color:var(--head-txt);margin:28px 0 12px}
 .about-content-box h3:first-child{margin-top:0}
 .about-content-box p{font-size:16px;line-height:1.75;color:var(--fg);margin:0 0 16px}
+.about-content-box ul{margin:12px 0 20px;padding-left:20px;color:var(--fg);font-size:15.5px;line-height:1.7}
+.about-content-box li{margin-bottom:8px}
 
 /* Ana Sayfa Film Şeridi (Marquee Carousel - Son 6 Makale) */
 .reel-section{background:var(--reel-bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
@@ -145,6 +152,7 @@ article .src{font:13.5px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;colo
 article .src ul{margin:8px 0 0;padding-left:18px}
 article .src li{margin-bottom:4px}
 
+/* Makale Sonu Ayrı Yayımlanma Tarihi Bloğu */
 article .pub-meta{margin-top:24px;padding:12px 16px;background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:8px;display:flex;align-items:center;justify-content:space-between;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12.5px;color:var(--mut);letter-spacing:0.03em}
 article .pub-meta span{display:inline-flex;align-items:center;gap:7px}
 article .pub-meta time{color:var(--head-txt);font-weight:700}
@@ -168,28 +176,30 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
 <header id="top">
   <div class="w">
     <a class="logo" href="#">
-      <!-- Orijinal Logo Küresiyle Birebir Aynı Vektör Tasarım -->
+      <!-- Orijinal Logo İle Tam Uyumlu Şık Vektör İkon -->
       <svg class="logo-mark" viewBox="0 0 72 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Altın Kompas Dış Okları ve Çemberi -->
         <path d="M36 2L40.5 13.5H31.5L36 2Z" fill="#c5a467"/>
         <path d="M2 34L13.5 29.5V38.5L2 34Z" fill="#c5a467"/>
         <path d="M70 34L58.5 38.5V29.5L70 34Z" fill="#c5a467"/>
         <path d="M36 66L31.5 54.5H40.5L36 66Z" fill="#c5a467"/>
         <circle cx="36" cy="34" r="22" stroke="#c5a467" stroke-width="2.6"/>
-        <circle cx="36" cy="34" r="18" fill="#1b4970"/>
-        <!-- Orijinal logodakine benzer detaylı kıta hatları -->
-        <path d="M25 21C28 18 33 18 36 21C39 24 35 28 32 29C29 30 26 25 25 21Z" fill="#75a5d0" fill-opacity="0.65"/>
-        <path d="M42 20C47 20 51 23 52 28C48 31 43 29 40 26C38 23 38 21 42 20Z" fill="#75a5d0" fill-opacity="0.65"/>
-        <path d="M22 34C25 32 28 35 27 41C25 45 22 47 20 44C18 40 20 36 22 34Z" fill="#75a5d0" fill-opacity="0.65"/>
-        <path d="M40 33C45 32 50 35 48 42C46 46 41 44 39 40C38 36 38 34 40 33Z" fill="#75a5d0" fill-opacity="0.65"/>
+        <!-- Derin Lacivert Küre -->
+        <circle cx="36" cy="34" r="18" fill="#143c60"/>
+        <!-- Kıta ve Harita Hatları -->
+        <path d="M24 23C27 20 32 19 35 22C37 24 34 27 31 28C28 29 25 27 24 23Z" fill="#d8ecfc" fill-opacity="0.85"/>
+        <path d="M40 21C44 21 49 24 50 29C47 31 44 30 42 27C40 25 38 23 40 21Z" fill="#d8ecfc" fill-opacity="0.85"/>
+        <path d="M23 33C26 32 29 35 28 40C27 44 24 46 22 43C20 39 21 35 23 33Z" fill="#d8ecfc" fill-opacity="0.85"/>
+        <path d="M41 34C45 33 49 36 48 41C46 44 42 43 40 39C39 36 40 35 41 34Z" fill="#d8ecfc" fill-opacity="0.85"/>
         <!-- Meridyen ve Paralel Çizgileri -->
-        <ellipse cx="36" cy="34" rx="9" ry="18" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.1"/>
-        <line x1="18" y1="34" x2="54" y2="34" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.1"/>
-        <line x1="36" y1="16" x2="36" y2="52" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.1"/>
-        <!-- Altın Pusula İğnesi -->
-        <path d="M24 46L32.5 30.5L48 22L39.5 37.5L24 46Z" fill="#0d2b45" stroke="#c5a467" stroke-width="1.4"/>
+        <ellipse cx="36" cy="34" rx="8.5" ry="18" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.1"/>
+        <line x1="18" y1="34" x2="54" y2="34" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.1"/>
+        <line x1="36" y1="16" x2="36" y2="52" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.1"/>
+        <!-- Kompas İğnesi -->
+        <path d="M24 46L32.5 30.5L48 22L39.5 37.5L24 46Z" fill="#0b2238" stroke="#ffffff" stroke-width="1.2"/>
         <circle cx="36" cy="34" r="2.2" fill="#ffffff"/>
         <!-- Alttaki Dalga Vurguları -->
-        <path d="M12 50C21 56 34 56 47 49C53 46 58 46 62 48" stroke="#1b4970" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M12 50C21 56 34 56 47 49C53 46 58 46 62 48" stroke="#143c60" stroke-width="3.2" stroke-linecap="round"/>
         <path d="M16 56C25 61 38 60.5 50 54C54 52 57 52 60 53" stroke="#c5a467" stroke-width="2.4" stroke-linecap="round"/>
       </svg>
       <div class="logo-text">
@@ -239,17 +249,31 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
     </div>
   </div>
 
-  <!-- Ana Sayfa Hakkımızda Bölümü (İstediğin kısa metin ile) -->
   <section id="home-about-sec">
     <div class="w">
       <div class="about-head">
         <div>
           <span class="eb" data-i18n="about_eb">Hakkımızda</span>
-          <h2 class="s" data-i18n="home_about_title">FKS Media ne yapar?</h2>
-          <p class="lead" data-i18n="home_about_lead">Türkiye ve BDT (Avrasya) coğrafyası başta olmak üzere uluslararası siyaset, enerji koridorları ve diplomasi trafiğini tarafsız ve analitik bir perspektifle inceliyoruz.</p>
+          <h2 class="s" data-i18n="about_title">FKS Media ne yapar?</h2>
+          <p class="lead" data-i18n="about_lead">Türkiye ve BDT (Avrasya) coğrafyası başta olmak üzere uluslararası siyaset, enerji koridorları ve diplomasi trafiğini tarafsız ve analitik bir perspektifle inceliyoruz.</p>
         </div>
         <div class="about-brand-img">
           <img src="logo.jpg" alt="FKS Media Logo">
+        </div>
+      </div>
+
+      <div class="about">
+        <div>
+          <h3 data-i18n="about_c1_t">Bölgesel Derinlik</h3>
+          <p data-i18n="about_c1_p">Güney Kafkasya, Orta Doğu ve büyük güçler arasındaki diplomatik hamleleri yüzeysel haber dili yerine stratejik arka planıyla ele alıyoruz.</p>
+        </div>
+        <div>
+          <h3 data-i18n="about_c2_t">Doğrulanmış Kaynaklar</h3>
+          <p data-i18n="about_c2_p">Her analizin sonunda başvurulan uluslararası medya, düşünce kuruluşu ve resmî açıklamaların bağlantıları şeffaf biçimde sunulur.</p>
+        </div>
+        <div>
+          <h3 data-i18n="about_c3_t">Tarafsız Stratejik Perspektif</h3>
+          <p data-i18n="about_c3_p">Jeopolitik gelişmeleri, enerji hatlarını ve güvenlik dengelerini spekülasyonlardan uzak, doğrudan sahadaki veriler ışığında değerlendiriyoruz.</p>
         </div>
       </div>
     </div>
@@ -281,14 +305,15 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
   </section>
 </div>
 
-<!-- 2. GÖRÜNÜM: SADECE HAKKIMIZDA SAYFASI (İstediğin "Biz Kimiz?" metinleri ile) -->
+<!-- 2. GÖRÜNÜM: SADECE HAKKIMIZDA SAYFASI (Güncellenmiş Kurumsal Metin ile) -->
 <div id="view-about" hidden>
   <section>
     <div class="w">
       <div class="about-head">
         <div>
           <span class="eb" data-i18n="about_eb">Hakkımızda</span>
-          <h2 class="s" data-i18n="about_title">FKS Media – Hakkımızda</h2>
+          <h2 class="s" data-i18n="about_title">FKS Media ne yapar?</h2>
+          <p class="lead" data-i18n="about_lead">Türkiye ve BDT (Avrasya) coğrafyası başta olmak üzere uluslararası siyaset, enerji koridorları ve diplomasi trafiğini tarafsız ve analitik bir perspektifle inceliyoruz.</p>
         </div>
         <div class="about-brand-img">
           <img src="logo.jpg" alt="FKS Media Logo">
@@ -299,6 +324,18 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
         <h3 data-i18n="ab_who_title">Biz Kimiz?</h3>
         <p data-i18n="ab_who_p1">FKS Media – sadece haber yayan geleneksel bir medya kuruluşu değil; modern dünyanın küresel siyasi süreçlerini, sosyal eğilimlerini ve bilgi akışını tarafsız bir şekilde analiz eden bağımsız bir analitik platformdur.</p>
         <p data-i18n="ab_who_p2">Modern dönemin en büyük zorluğu bilgi kıtlığı değil, aksine manipüle edilmiş bilgi bolluğudur. Bilginin en güçlü etki aracı olduğunun bilincindeyiz ve amacımız, okuyucularımıza bu silahı değil, gerçeğin ve objektif analizin kendisini sunmaktır.</p>
+
+        <h3 data-i18n="ab_phil_title">Felsefemiz ve Misyonumuz</h3>
+        <ul>
+          <li><b data-i18n="ab_li1_b">Mutlak Tarafsızlık:</b> <span data-i18n="ab_li1_t">Herhangi bir ideolojinin veya siyasi hattın etki alanından uzakta, yalnızca gerçeklere ve analitik kanıtlara dayanıyoruz.</span></li>
+          <li><b data-i18n="ab_li2_b">Çok Yönlü Bakış Açısı:</b> <span data-i18n="ab_li2_t">Herhangi bir küresel olguya veya toplumu ilgilendiren hassas konuya yalnızca tek bir taraftan bakmıyoruz. Konuları tarihi, dini, sosyal, ekonomik ve hukuki bağlamda ele alarak okuyucularımıza tam resmi sunuyoruz.</span></li>
+          <li><b data-i18n="ab_li3_b">Bilgi Okuryazarlığı:</b> <span data-i18n="ab_li3_t">Toplumda eleştirel düşüncenin gelişimini desteklemek, insanlara sadece haber okumayı değil, olayları derinlemesine analiz etmeyi öğretmek temel prensiplerimiz arasındadır.</span></li>
+        </ul>
+
+        <h3 data-i18n="ab_goal_title">Ne Hedefliyoruz?</h3>
+        <p data-i18n="ab_goal_p1">Faaliyetlerimizin ilk aşamasında ana odak noktamız dünya siyasetindeki kritik süreçler ve güncel bölgesel-küresel olaylar olsa da, gelecekte yönelimimizi daha da genişletmeyi planlıyoruz.</p>
+        <p data-i18n="ab_goal_p2">Toplumu düşündüren, farklı sosyal ve hukuki tartışmalara yol açan konuları herhangi bir sansür veya tek taraflı prizma olmaksızın, toplumun farklı kesimlerinin çıkar ve yaklaşımlarını göz önünde bulundurarak masaya yatırıyoruz.</p>
+        <p style="margin-top:24px;font-weight:700;color:var(--acc);" data-i18n="ab_footer_slogan">Bize katılın – çünkü doğru bilgi anlamakla başlar.</p>
       </div>
     </div>
   </section>
@@ -602,7 +639,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
         <div class="src"><strong>Kaynaklar:</strong> <a href="https://www.cfr.org/articles/foreign-policy-and-the-2026-midterms-a-cfr-guide">CFR</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></div>
         <div class="pub-meta">
           <span>Yayımlanma Tarihi</span>
-          <time datetime="2026-11-08">8 Kasım 2026</time>
+          <time datetime="2026-11-08">8 ноября 2026</time>
         </div>
       </div>
 
@@ -634,6 +671,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
 (()=>{
   const $ = i => document.getElementById(i);
   let curLang = localStorage.getItem('fks_lang') || 'tr';
+  // Varsayılan tema artık koyu (dark)
   let curTheme = localStorage.getItem('fks_theme') || 'dark';
   let curCat = 'all';
 
@@ -663,13 +701,30 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       hero_btn1: "Gelişmeleri oku",
       hero_btn2: "Biz kimiz?",
       about_eb: "Hakkımızda",
-      about_title: "FKS Media – Hakkımızda",
-      home_about_title: "FKS Media ne yapar?",
-      home_about_lead: "Türkiye ve BDT (Avrasya) coğrafyası başta olmak üzere uluslararası siyaset, enerji koridorları ve diplomasi trafiğini tarafsız ve analitik bir perspektifle inceliyoruz.",
+      about_title: "FKS Media ne yapar?",
+      about_lead: "Türkiye ve BDT (Avrasya) coğrafyası başta olmak üzere uluslararası siyaset, enerji koridorları ve diplomasi trafiğini tarafsız ve analitik bir perspektifle inceliyoruz.",
+      about_c1_t: "Bölgesel Derinlik",
+      about_c1_p: "Güney Kafkasya, Orta Doğu ve büyük güçler arasındaki diplomatik hamleleri yüzeysel haber dili yerine stratejik arka planıyla ele alıyoruz.",
+      about_c2_t: "Doğrulanmış Kaynaklar",
+      about_c2_p: "Her analizin sonunda başvurulan uluslararası medya, düşünce kuruluşu ve resmî açıklamaların bağlantıları şeffaf biçimde sunulur.",
+      about_c3_t: "Tarafsız Stratejik Perspektif",
+      about_c3_p: "Jeopolitik gelişmeleri, enerji hatlarını ve güvenlik dengelerini spekülasyonlardan uzak, doğrudan sahadaki veriler ışığında değerlendiriyoruz.",
       
+      /* Yeni Eklenen Kurumsal Hakkımızda Metni Sözlüğü (TR) */
       ab_who_title: "Biz Kimiz?",
       ab_who_p1: "FKS Media – sadece haber yayan geleneksel bir medya kuruluşu değil; modern dünyanın küresel siyasi süreçlerini, sosyal eğilimlerini ve bilgi akışını tarafsız bir şekilde analiz eden bağımsız bir analitik platformdur.",
       ab_who_p2: "Modern dönemin en büyük zorluğu bilgi kıtlığı değil, aksine manipüle edilmiş bilgi bolluğudur. Bilginin en güçlü etki aracı olduğunun bilincindeyiz ve amacımız, okuyucularımıza bu silahı değil, gerçeğin ve objektif analizin kendisini sunmaktır.",
+      ab_phil_title: "Felsefemiz ve Misyonumuz",
+      ab_li1_b: "Mutlak Tarafsızlık:",
+      ab_li1_t: "Herhangi bir ideolojinin veya siyasi hattın etki alanından uzakta, yalnızca gerçeklere ve analitik kanıtlara dayanıyoruz.",
+      ab_li2_b: "Çok Yönlü Bakış Açısı:",
+      ab_li2_t: "Herhangi bir küresel olguya veya toplumu ilgilendiren hassas konuya yalnızca tek bir taraftan bakmıyoruz. Konuları tarihi, dini, sosyal, ekonomik ve hukuki bağlamda ele alarak okuyucularımıza tam resmi sunuyoruz.",
+      ab_li3_b: "Bilgi Okuryazarlığı:",
+      ab_li3_t: "Toplumda eleştirel düşüncenin gelişimini desteklemek, insanlara sadece haber okumayı değil, olayları derinlemesine analiz etmeyi öğretmek temel prensiplerimiz arasındadır.",
+      ab_goal_title: "Ne Hedefliyoruz?",
+      ab_goal_p1: "Faaliyetlerimizin ilk aşamasında ana odak noktamız dünya siyasetindeki kritik süreçler ve güncel bölgesel-küresel olaylar olsa da, gelecekte yönelimimizi daha da genişletmeyi planlıyoruz.",
+      ab_goal_p2: "Toplumu düşündüren, farklı sosyal ve hukuki tartışmalara yol açan konuları herhangi bir sansür veya tek taraflı prizma olmaksızın, toplumun farklı kesimlerinin çıkar ve yaklaşımlarını göz önünde bulundurarak masaya yatırıyoruz.",
+      ab_footer_slogan: "Bize katılın – çünkü doğru bilgi anlamakla başlar.",
 
       blog_eb: "Yayınlar",
       blog_title: "Son Gelişmeler",
@@ -697,13 +752,30 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       hero_btn1: "Читать обзоры",
       hero_btn2: "Кто мы?",
       about_eb: "О проекте",
-      about_title: "FKS Media – О нас",
-      home_about_title: "Чем занимается FKS Media?",
-      home_about_lead: "Мы исследуем международную политику, энергетические коридоры и дипломатию в регионе Турции и СНГ (Евразии) с объективной и аналитической перспективы.",
+      about_title: "Чем занимается FKS Media?",
+      about_lead: "Мы исследуем международную политику, энергетические коридоры и дипломатию в регионе Турции и СНГ (Евразии) с объективной и аналитической перспективы.",
+      about_c1_t: "Региональная глубина",
+      about_c1_p: "Мы рассматриваем дипломатические шаги на Южном Кавказе, Ближнем Востоке и между мировыми державами через их стратегический контекст.",
+      about_c2_t: "Проверенные источники",
+      about_c2_p: "В конце каждого материала открыто приводятся ссылки на международные медиа, аналитические центры и официальные заявления.",
+      about_c3_t: "Объективный стратегический взгляд",
+      about_c3_p: "Мы оцениваем геополитические процессы, энергетические маршруты и баланс безопасности без спекуляций, опираясь исключительно на факты.",
       
+      /* Kurumsal Hakkımızda Metni Sözlüğü (RU) */
       ab_who_title: "Кто мы?",
       ab_who_p1: "FKS Media – это не просто традиционное новостное СМИ, а независимая аналитическая платформа, беспристрастно исследующая глобальные политические процессы, социальные тенденции и потоки информации современного мира.",
       ab_who_p2: "Главный вызов современности – не дефицит информации, а избыток манипулируемых данных. Мы осознаем, что информация – мощнейший инструмент влияния, и наша цель – предлагать читателям не этот инструмент, а саму правду и объективный анализ.",
+      ab_phil_title: "Наша философия и миссия",
+      ab_li1_b: "Абсолютная беспристрастность:",
+      ab_li1_t: "Вне зависимости от идеологий и политических линий, мы опираемся исключительно на факты и аналитические доказательства.",
+      ab_li2_b: "Многосторонний подход:",
+      ab_li2_t: "Мы не смотрим на глобальные явления однобоко. Мы рассматриваем темы в историческом, религиозном, социальном, экономическом и правовом контекстах, предоставляя полную картину.",
+      ab_li3_b: "Информационная грамотность:",
+      ab_li3_t: "Развитие критического мышления в обществе и обучение глубокому анализу событий – наши ключевые принципы.",
+      ab_goal_title: "Наши цели",
+      ab_goal_p1: "На первом этапе наш главный фокус – критические процессы мировой политики и регионально-глобальные события, однако в будущем мы планируем расширять горизонты.",
+      ab_goal_p2: "Мы обсуждаем острые общественные и правовые темы без цензуры и односторонних призм, учитывая интересы и подходы всех слоев общества.",
+      ab_footer_slogan: "Присоединяйтесь к нам – ведь истинное знание начинается с понимания.",
 
       blog_eb: "Публикации",
       blog_title: "Последние события",
