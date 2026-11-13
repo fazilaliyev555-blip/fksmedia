@@ -3,39 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="google" content="notranslate">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <title>FKS Media — Uluslararası İlişkiler ve Stratejik Analiz</title>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f0f5fc;--reel-bg:#e4ecf7;--fg:#14202b;--mut:#4a5a6a;--card:#ffffff;--line:#cdd8e6;--acc:#0b5f8a;--gold:#c5a467;--dk:#0e2233;--logo-fks:#0e2233;--head-txt:#0e2233}
 :root[data-theme="dark"]{--bg:#0d151e;--reel-bg:#111b26;--fg:#e6edf3;--mut:#95a4b3;--card:#15202b;--line:#243444;--acc:#5bb4e0;--gold:#d4b87a;--dk:#080e14;--logo-fks:#ffffff;--head-txt:#f0f6fc}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 106px);scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh;display:flex;flex-direction:column;transition:background-color 0.25s, color 0.25s}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;transition:background-color 0.25s, color 0.25s}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:12}
 a{color:inherit}
-.w{max-width:1060px;margin:0 auto;padding:0 20px}
+.w{max-width:1060px;margin:0 auto;padding:0 20px;width:100%}
 
 /* Header & Orijinal Logo İle Birebir Uyumlu Şık Vektör Loqo */
 #top{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 4px rgba(14,34,51,0.08);transition:background-color 0.25s, border-color 0.25s}
-#top .w{display:flex;align-items:center;gap:18px;height:68px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
-.logo-mark{width:46px;height:44px;flex-shrink:0}
-.logo-text{display:flex;flex-direction:column;line-height:0.92}
-.logo-text strong{font-family:Georgia,"Times New Roman",serif;font-weight:800;font-size:26px;color:var(--logo-fks);letter-spacing:0.01em}
-.logo-text span{font-size:10px;font-weight:700;letter-spacing:0.38em;color:var(--gold);margin-top:3px;text-transform:uppercase;padding-left:1px}
+#top .w{display:flex;align-items:center;justify-content:space-between;gap:10px;height:68px;max-width:100%;padding:0 14px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0;min-width:0}
+.logo-mark{width:40px;height:38px;flex-shrink:0}
+.logo-text{display:flex;flex-direction:column;line-height:0.92;min-width:0}
+.logo-text strong{font-family:Georgia,"Times New Roman",serif;font-weight:800;font-size:22px;color:var(--logo-fks);letter-spacing:0.01em}
+.logo-text span{font-size:9.5px;font-weight:700;letter-spacing:0.35em;color:var(--gold);margin-top:3px;text-transform:uppercase;padding-left:1px}
 
-#top nav{display:flex;align-items:center;gap:16px;font-size:14px;font-weight:600}
+#top nav{display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:600;flex-shrink:1;min-width:0;overflow:hidden}
 #top nav a{text-decoration:none;color:var(--mut);padding:6px 2px;border-bottom:2px solid transparent;transition:color 0.2s, border-color 0.2s;white-space:nowrap}
 #top nav a:hover,#top nav a.nav-active{color:var(--acc);border-bottom-color:var(--acc)}
 
 /* Dil ve Tema Seçici Kontrolleri */
-.controls-grp{display:flex;align-items:center;gap:8px}
-.lang-sw{display:flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px}
-.lang-btn{font:700 12px/1 system-ui,sans-serif;padding:6px 10px;border-radius:6px;border:none;background:transparent;color:var(--mut);cursor:pointer;transition:all 0.2s}
+.controls-grp{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.lang-sw{display:flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px;gap:1px}
+.lang-btn{font:700 11px/1 system-ui,sans-serif;padding:5px 8px;border-radius:5px;border:none;background:transparent;color:var(--mut);cursor:pointer;transition:all 0.2s}
 .lang-btn.active{background:var(--acc);color:#fff}
 :root[data-theme="dark"] .lang-btn.active{color:#080e14}
 
-.theme-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer;font-size:15px;transition:all 0.2s}
+.theme-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:30px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer;font-size:14px;transition:all 0.2s;flex-shrink:0}
 .theme-btn:hover{border-color:var(--acc);color:var(--acc)}
 
 /* Canlı Piyasa ve Döviz Şeridi */
@@ -166,12 +166,12 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
   .film-card{width:280px}
 }
 @media(max-width:640px){
-  #top .w{gap:8px;padding:0 12px}
-  #top nav{gap:10px;font-size:13px}
-  .logo-text strong{font-size:22px}
-  .logo-text span{font-size:9px}
-  .logo-mark{width:38px;height:36px}
-  .w{padding:0 14px}
+  #top .w{gap:6px;padding:0 8px}
+  #top nav{gap:8px;font-size:12px}
+  .logo-text strong{font-size:19px}
+  .logo-text span{font-size:8.5px}
+  .logo-mark{width:34px;height:32px}
+  .w{padding:0 12px}
   .hero h1{font-size:28px}
   .hero p{font-size:16px}
   .btn.g{margin:8px 0 0}
@@ -256,7 +256,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       <div class="about-head">
         <div>
           <span class="eb" data-i18n="about_eb">Hakkımızda</span>
-          <h2 class="s" data-i18n="home_about_title">FKS Media – Hakkımızda</h2>
+          <h2 class="s" data-i18n="home_about_title">FKS Media — Framing Knowledge for Society</h2>
           <p class="lead" data-i18n="home_about_lead">FKS Media – sadece haber yayan geleneksel bir medya kuruluşu değil; modern dünyanın küresel siyasi süreçlerini, sosyal eğilimlerini ve bilgi akışını tarafsız bir şekilde analiz eden bağımsız bir analitik platformdur.</p>
         </div>
         <div class="about-brand-img">
@@ -287,7 +287,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       <div class="reel-head">
         <div>
           <span class="eb" data-i18n="blog_eb">Yayınlar</span>
-          <h2 class="s" data-i18n="blog_title">Son Gelişmeler</h2>
+          <h2 class="s" data-i18n="blog_title">Dünya siyasetinde yaşanan son gelişmeler</h2>
           <p class="lead" data-i18n="reel_lead">En güncel 6 stratejik analiz. Tüm arşive ve kategorilere ulaşmak için Gelişmeler sayfasına geçebilirsiniz.</p>
         </div>
         <a class="btn-outline-acc" href="#blog" data-i18n="all_news_btn">Tüm gelişmeleri gör →</a>
@@ -314,7 +314,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       <div class="about-head">
         <div>
           <span class="eb" data-i18n="about_eb">Hakkımızda</span>
-          <h2 class="s" data-i18n="about_title">Hakkımızda</h2>
+          <h2 class="s" data-i18n="about_title">FKS Media — Framing Knowledge for Society</h2>
           <p class="lead" data-i18n="about_lead">FKS Media</p>
         </div>
         <div class="about-brand-img">
@@ -348,7 +348,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
   <section>
     <div class="w">
       <span class="eb" data-i18n="blog_eb">Yayınlar</span>
-      <h2 class="s" data-i18n="blog_title">Son Gelişmeler</h2>
+      <h2 class="s" data-i18n="blog_title">Dünya siyasetinde yaşanan son gelişmeler</h2>
       <p class="lead" data-i18n="blog_lead">Dış politikanın öne çıkan başlıkları.</p>
       <div class="filters" id="filters"></div>
       <div id="grid"></div>
@@ -502,7 +502,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
         </figure>
         <p>На промежуточных выборах 3 ноября демократы получили контроль как над Палатой представителей, так и над Сенатом. По данным Reuters, президент Трамп признал, что война с Ираном сыграла свою роль в поражении республиканцев. Согласно экзитполам, около трёх четвертей избирателей назвали войну «очень важным» или «важным» фактором при голосовании.</p>
         <p>У демократов нет квалифицированного большинства в две трети голосов для преодоления президентского вето, поэтому Белый дом сохраняет широкую инициативу во внешней политике. Однако контроль над бюджетом, председательство в комитетах, расследования и утверждение назначений переходят к демократам.</p>
-        <p>Аналитики полагают, что изменения будут носить скорее сдерживающий характер: от Трампа не ждут смены базового курса, но реализация новых стратегий обойдётся администрации значительно дороже в политическом плане.</p>
+        <p>Аналитики полагают, что изменения будут носить скорее сдерживающий характер: от Трампа не ждут смены базового курса, но реализация новых стратегий обойдется администрации значительно дороже в политическом плане.</p>
         <div class="src"><strong>Источники:</strong> <a href="https://arynews.tv/trump-acknowledges-role-of-iran-war-in-democratic-sweep-in-midterm-elections">Reuters (ARY)</a> · <a href="https://www.cfr.org/articles/democrats-win-control-of-congress-heres-how-that-could-affect-u-s-foreign-policy">CFR</a> · <a href="https://responsiblestatecraft.org/midterm-elections-2026-results/">Responsible Statecraft</a> · <a href="https://www.thenationalnews.com/news/us/2026/10/20/us-midterms-iran-foreign-policy/">The National</a></div>
         <div class="pub-meta">
           <span>Дата публикации</span>
@@ -702,9 +702,9 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       hero_btn1: "Gelişmeleri oku",
       hero_btn2: "Biz kimiz?",
       about_eb: "Hakkımızda",
-      about_title: "Hakkımızda",
+      about_title: "FKS Media — Framing Knowledge for Society",
       about_lead: "FKS Media",
-      home_about_title: "FKS Media – Hakkımızda",
+      home_about_title: "FKS Media — Framing Knowledge for Society",
       home_about_lead: "FKS Media – sadece haber yayan geleneksel bir medya kuruluşu değil; modern dünyanın küresel siyasi süreçlerini, sosyal eğilimlerini ve bilgi akışını tarafsız bir şekilde analiz eden bağımsız bir analitik platformdur.",
       
       ab_who_title: "Biz Kimiz?",
@@ -723,9 +723,9 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       ab_footer_slogan: "Bize katılın – çünkü doğru bilgi anlamakla başlar.",
 
       blog_eb: "Yayınlar",
-      blog_title: "Son Gelişmeler",
+      blog_title: "Dünya siyasetinde yaşanan son gelişmeler",
       blog_lead: "Dış politikanın öne çıkan başlıkları.",
-      reel_lead: "En güncel 6 stratejik analiz. Tüm arşive ve kategorilere ulaşmak için Gelişmeler sayfasına geçebilirsiniz.",
+      reel_lead: "Dünya siyasetinde yaşanan son gelişmeler. Tüm arşive ve kategorilere ulaşmak için Gelişmeler sayfasına geçebilirsiniz.",
       all_news_btn: "Tüm gelişmeleri gör →",
       read_more: "Devamını oku →",
       empty_cat: "Bu kategori için özel analizler hazırlanmaktadır. Yakında burada yayınlanacaktır.",
@@ -748,9 +748,9 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       hero_btn1: "Читать обзоры",
       hero_btn2: "Кто мы?",
       about_eb: "О проекте",
-      about_title: "О нас",
+      about_title: "FKS Media — Framing Knowledge for Society",
       about_lead: "FKS Media",
-      home_about_title: "FKS Media – О нас",
+      home_about_title: "FKS Media — Framing Knowledge for Society",
       home_about_lead: "FKS Media – это не просто традиционное новостное СМИ, а независимая аналитическая платформа, беспристрастно исследующая глобальные политические процессы, социальные тенденции и потоки информации современного мира.",
       
       ab_who_title: "Кто мы?",
@@ -769,9 +769,9 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       ab_footer_slogan: "Присоединяйтесь к нам – ведь истинное знание начинается с понимания.",
 
       blog_eb: "Публикации",
-      blog_title: "Последние события",
+      blog_title: "Последние события в мировой политике",
       blog_lead: "Ключевые темы внешней политики.",
-      reel_lead: "6 новейших стратегических обзоров. Перейдите в раздел «События», чтобы открыть полный архив и категории.",
+      reel_lead: "Последние события в мировой политике. Перейдите в раздел «События», чтобы открыть полный архив и категории.",
       all_news_btn: "Все события →",
       read_more: "Читать далее →",
       empty_cat: "Специальные аналитические материалы по этой категории готовятся и скоро будут опубликованы.",
