@@ -5,8 +5,8 @@
 <meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <title>FKS Media — Uluslararası İlişkiler ve Stratejik Analiz</title>
-<!-- Sayt İkonu (Favicon) - Göndərdiyin Orijinal Logo Şəkli -->
-<link rel="icon" type="image/jpeg" href="logo.jpg">
+<!-- Sayt İkonu (Favicon) - Göndərdiyin Qlobus Loqosu -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 72 68' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 2L40.5 13.5H31.5L36 2Z' fill='%23c5a467'/%3E%3Cpath d='M2 34L13.5 29.5V38.5L2 34Z' fill='%23c5a467'/%3E%3Cpath d='M70 34L58.5 38.5V29.5L70 34Z' fill='%23c5a467'/%3E%3Cpath d='M36 66L31.5 54.5H40.5L36 66Z' fill='%23c5a467'/%3E%3Ccircle cx='36' cy='34' r='22' stroke='%23c5a467' stroke-width='2.6'/%3E%3Ccircle cx='36' cy='34' r='18' fill='%23143c60'/%3E%3Cpath d='M24 23C27 20 32 19 35 22C37 24 34 27 31 28C28 29 25 27 24 23Z' fill='%23d8ecfc' fill-opacity='0.85'/%3E%3Cpath d='M40 21C44 21 49 24 50 29C47 31 44 30 42 27C40 25 38 23 40 21Z' fill='%23d8ecfc' fill-opacity='0.85'/%3E%3Cpath d='M23 33C26 32 29 35 28 40C27 44 24 46 22 43C20 39 21 35 23 33Z' fill='%23d8ecfc' fill-opacity='0.85'/%3E%3Cpath d='M41 34C45 33 49 36 48 41C46 44 42 43 40 39C39 36 40 35 41 34Z' fill='%23d8ecfc' fill-opacity='0.85'/%3E%3Cellipse cx='36' cy='34' rx='8.5' ry='18' stroke='%23ffffff' stroke-opacity='0.4' stroke-width='1.1'/%3E%3Cline x1='18' y1='34' x2='54' y2='34' stroke='%23ffffff' stroke-opacity='0.4' stroke-width='1.1'/%3E%3Cline x1='36' y1='16' x2='36' y2='52' stroke='%23ffffff' stroke-opacity='0.4' stroke-width='1.1'/%3E%3Cpath d='M24 46L32.5 30.5L48 22L39.5 37.5L24 46Z' fill='%230b2238' stroke='%23ffffff' stroke-width='1.2'/%3E%3Ccircle cx='36' cy='34' r='2.2' fill='%23ffffff'/%3E%3Cpath d='M12 50C21 56 34 56 47 49C53 46 58 46 62 48' stroke='%23143c60' stroke-width='3.2' stroke-linecap='round'/%3E%3Cpath d='M16 56C25 61 38 60.5 50 54C54 52 57 52 60 53' stroke='%23c5a467' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f0f5fc;--reel-bg:#e4ecf7;--fg:#14202b;--mut:#4a5a6a;--card:#ffffff;--line:#cdd8e6;--acc:#0b5f8a;--gold:#c5a467;--dk:#0e2233;--logo-fks:#0e2233;--head-txt:#0e2233}
 :root[data-theme="dark"]{--bg:#0d151e;--reel-bg:#111b26;--fg:#e6edf3;--mut:#95a4b3;--card:#15202b;--line:#243444;--acc:#5bb4e0;--gold:#d4b87a;--dk:#080e14;--logo-fks:#ffffff;--head-txt:#f0f6fc}
@@ -40,7 +40,7 @@ a{color:inherit}
 .theme-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:30px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer;font-size:14px;transition:all 0.2s;flex-shrink:0}
 .theme-btn:hover{border-color:var(--acc);color:var(--acc)}
 
-/* Canlı Piyasa ve Döviz Şeridi (USD Esaslı) */
+/* Canlı Piyasa ve Döviz Şeridi (USD Esaslı + Manat) */
 .ticker-bar{background:var(--dk);color:#e8edf2;border-bottom:1px solid rgba(255,255,255,0.08);font-size:12.5px}
 .ticker-bar .w{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:8px;padding-bottom:8px;overflow-x:auto;scrollbar-width:none}
 .ticker-bar .w::-webkit-scrollbar{display:none}
@@ -226,13 +226,13 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
   </div>
 </header>
 
-<!-- Canlı Piyasa ve Döviz Kurları Şeridi (USD Esaslı) -->
+<!-- Canlı Piyasa ve Döviz Kurları Şeridi (USD Esaslı + Manat) -->
 <div class="ticker-bar" aria-label="Piyasalar ve Döviz Kurları">
   <div class="w">
     <div class="ticker-label" data-i18n="ticker_title">Piyasalar</div>
     <div class="ticker-list">
       <div class="rate-item"><b data-i18n="ticker_eur">EUR/USD</b> <span id="r-eur">1,0550</span> <span class="rate-up">▲</span></div>
-      <div class="rate-item"><b data-i18n="ticker_gbp">GBP/USD</b> <span id="r-gbp">1,2680</span> <span class="rate-up">▲</span></div>
+      <div class="rate-item"><b data-i18n="ticker_usdazn">USD/AZN</b> <span id="r-usdazn">1,7000</span> <span class="rate-eq">●</span></div>
       <div class="rate-item"><b data-i18n="ticker_usdtry">USD/TRY</b> <span id="r-usdtry">34,50</span> <span class="rate-up">▲</span></div>
       <div class="rate-item"><b data-i18n="ticker_usdru">USD/RUB</b> <span id="r-usdru">98,20</span> <span class="rate-up">▲</span></div>
       <div class="rate-item"><b data-i18n="ticker_gold">ALTIN (XAU)</b> <span id="r-xau">$2.685</span> <span class="rate-up">▲</span></div>
@@ -387,7 +387,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
 
         <h3>Washington'ın yaklaşımı: Serbest geçiş ve stratejik baskının korunması</h3>
         <p>ABD yönetiminin yaklaşımı ise farklı önceliklere dayanıyor. Washington, Hürmüz Boğazı'nın uluslararası deniz trafiğine açık tutulmasını ve İran'ın bu güzergâh üzerindeki kontrolünün kalıcı bir siyasi veya ekonomik avantaja dönüşmemesini istiyor. Boğazın güvenliği, Körfez ülkelerinin ekonomik istikrarı, ABD'nin bölgesel müttefikleriyle ilişkileri ve uluslararası deniz ticaretinin güvenilirliğiyle doğrudan bağlantılı.</p>
-        <p>Bunun yanında Washington, İran'a yönelik ekonomik baskıyı müzakerelerde önemli bir araç olarak korumaya çalışıyor. ABD Dışişleri Bakanı Marco Rubio'nun İran'ın taleplerine yönelik açıklamaları ve Reuters'ın 10 Kasım tarihli haberinde aktarılan G7 temasları, yönetimin yaptırımları ve deniz ablukasını sürdürme eğiliminde olduğunu gösteriyor. ABD'nin bakış açısından, boğazın yeniden açılması karşılığında önceden yaptırım tavizi verilmesi, İran'ın müzakerelerdeki konumunu güçlendirebilir.</p>
+        <p>Bunun yanında Washington, İran'ın yönelik ekonomik baskıyı müzakerelerde önemli bir araç olarak korumaya çalışıyor. ABD Dışişleri Bakanı Marco Rubio'nun İran'ın taleplerine yönelik açıklamaları ve Reuters'ın 10 Kasım tarihli haberinde aktarılan G7 temasları, yönetimin yaptırımları ve deniz ablukasını sürdürme eğiliminde olduğunu gösteriyor. ABD'nin bakış açısından, boğazın yeniden açılması karşılığında önceden yaptırım tavizi verilmesi, İran'ın müzakerelerdeki konumunu güçlendirebilir.</p>
         <p>Ancak bu yaklaşımın da bazı maliyetleri bulunuyor. Ablukanın ve askerî gerilimin devam etmesi, yalnızca İran ekonomisini değil, bölgedeki ticari faaliyetleri ve ABD'nin müttefikleriyle ilişkilerini de etkiliyor. Ayrıca uzun süreli belirsizlik, enerji piyasalarında fiyat dalgalanmalarını ve nakliye maliyetlerini artırabiliyor.</p>
 
         <h3>Umman'ın rolü: İki taraf arasında deniz güvenliği diplomasisi</h3>
@@ -697,7 +697,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       nav_blog: "Gelişmeler",
       ticker_title: "Piyasalar",
       ticker_eur: "EUR/USD",
-      ticker_gbp: "GBP/USD",
+      ticker_usdazn: "USD/AZN",
       ticker_usdtry: "USD/TRY",
       ticker_usdru: "USD/RUB",
       ticker_gold: "ALTIN (XAU)",
@@ -753,7 +753,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       nav_blog: "События",
       ticker_title: "Рынки",
       ticker_eur: "EUR/USD",
-      ticker_gbp: "GBP/USD",
+      ticker_usdazn: "USD/AZN",
       ticker_usdtry: "USD/TRY",
       ticker_usdru: "USD/RUB",
       ticker_gold: "ЗОЛОТО (XAU)",
@@ -1027,7 +1027,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
     }
   }
 
-  // Canlı Döviz ve Piyasa Güncelleyici (USD Bazlı)
+  // Canlı Döviz ve Piyasa Güncelleyici (USD Bazlı + Manat)
   async function updateMarkets() {
     const fmt = (n, d = 4) => n.toFixed(d).replace('.', ',');
     try {
@@ -1035,7 +1035,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
       const fx = await fxRes.json();
       if (fx && fx.rates) {
         if (fx.rates.EUR) $('r-eur').textContent = fmt(1 / fx.rates.EUR, 4);
-        if (fx.rates.GBP) $('r-gbp').textContent = fmt(1 / fx.rates.GBP, 4);
+        if (fx.rates.AZN) $('r-usdazn').textContent = fmt(fx.rates.AZN, 4);
         if (fx.rates.TRY) $('r-usdtry').textContent = fmt(fx.rates.TRY, 2);
         if (fx.rates.RUB) $('r-usdru').textContent = fmt(fx.rates.RUB, 2);
       }
