@@ -21,6 +21,7 @@
         .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 30px; margin-bottom: 20px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); }
         label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-muted); }
         input, select, textarea { width: 100%; padding: 14px; margin-bottom: 20px; background: #0b1120; border: 1px solid var(--border-color); color: var(--text-main); border-radius: 8px; box-sizing: border-box; font-size: 1rem; }
+        input[type="file"] { padding: 10px; cursor: pointer; }
         input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
         button { background: var(--accent); color: white; border: none; padding: 14px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1rem; width: 100%; transition: background 0.2s; }
         button:hover { background: var(--accent-hover); }
@@ -32,8 +33,6 @@
         .tab-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
         #status { margin-top: 15px; font-weight: bold; text-align: center; }
         .hidden { display: none; }
-        .row { display: flex; gap: 20px; }
-        .col { flex: 1; }
         .post-row { display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid var(--border-color); }
         .post-row:last-child { border-bottom: none; }
     </style>
@@ -42,7 +41,7 @@
 
     <div class="container">
         <header>
-            <h1>FKS Media <span style="font-size: 0.9rem; color: var(--accent);">WordPress Tərzi CMS</span></h1>
+            <h1>FKS Media <span style="font-size: 0.9rem; color: var(--accent);">CMS Redaktoru</span></h1>
             <button class="btn-secondary" onclick="logoutToken()">Token Sıfırla</button>
         </header>
 
@@ -67,38 +66,28 @@
                 <br>
                 
                 <input type="hidden" id="editFileName" value="">
+                <input type="hidden" id="existingImage" value="">
 
                 <label>Məqalə Başlığı (Add title)</label>
                 <input type="text" id="title" placeholder="Məsələn: Hürmüz Boğazı'nda Yeni Düğüm...">
 
-                <div class="row">
-                    <div class="col">
-                        <label>Kateqoriya</label>
-                        <select id="category">
-                            <option value="Orta Doğu">Orta Doğu</option>
-                            <option value="Türkiye">Türkiye</option>
-                            <option value="Россия">Россия</option>
-                            <option value="Güney Kafkasya">Güney Kafkasya</option>
-                            <option value="ABD">ABD</option>
-                            <option value="Avrupa">Avrupa</option>
-                            <option value="Diplomasi">Diplomasi</option>
-                            <option value="Ekonomi ve Güvenlik">Ekonomi ve Güvenlik</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label>Dil (Language)</label>
-                        <select id="lang">
-                            <option value="tr">Türkçe (TR)</option>
-                            <option value="ru">Русский (RU)</option>
-                        </select>
-                    </div>
-                </div>
+                <label>Kateqoriya</label>
+                <select id="category">
+                    <option value="Orta Doğu">Orta Doğu</option>
+                    <option value="Türkiye">Türkiye</option>
+                    <option value="Россия">Россия</option>
+                    <option value="Güney Kafkasya">Güney Kafkasya</option>
+                    <option value="ABD">ABD</option>
+                    <option value="Avrupa">Avrupa</option>
+                    <option value="Diplomasi">Diplomasi</option>
+                    <option value="Ekonomi ve Güvenlik">Ekonomi ve Güvenlik</option>
+                </select>
 
-                <label>Kapak Görseli Linki (Featured Image URL)</label>
-                <input type="text" id="image" placeholder="Məsələn: https://images.unsplash.com/...">
+                <label>Kapak Görseli (Kompyuterdən Şəkil Seç)</label>
+                <input type="file" id="imageFile" accept="image/*">
 
                 <label>Məqalə Məzmunu (Content)</label>
-                <textarea id="content" rows="12" placeholder="Məqalənin tam mətni və ya xülasəsi..."></textarea>
+                <textarea id="content" rows="12" placeholder="Məqalənin tam mətni..."></textarea>
 
                 <button id="submitBtn" onclick="publishArticle()">Məqaləni Yayınla (Publish)</button>
                 <button id="cancelEditBtn" class="hidden btn-secondary" style="width:100%; margin-top:10px;" onclick="resetForm()">Düzəni İptal Et</button>
@@ -108,7 +97,7 @@
             <!-- Məqalə Siyahısı və Düzənləmə Bölməsi -->
             <div id="listTab" class="card hidden">
                 <h2>Mövcud Məqalələr (Köhnələri Dəyişdir)</h2>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Buradan istənilən köhnə məqaləni seçib şablonunu dəyişdirə bilərsən:</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Buradan istənilən məqaləni seçib düzənləyə bilərsən:</p>
                 <div id="postList" style="margin-top: 15px;">Yüklənir...</div>
             </div>
         </div>
@@ -125,7 +114,7 @@
                 document.getElementById('tokenSection').classList.add('hidden');
                 document.getElementById('adminPanel').classList.remove('hidden');
             } else {
-                document.getElementById('tokenSection').classList.remove('hidden');
+                document.getElementById('tokenSection').classList.add('hidden');
             }
         };
 
@@ -158,8 +147,9 @@
 
         function resetForm() {
             document.getElementById('editFileName').value = '';
+            document.getElementById('existingImage').value = '';
             document.getElementById('title').value = '';
-            document.getElementById('image').value = '';
+            document.getElementById('imageFile').value = '';
             document.getElementById('content').value = '';
             document.getElementById('formTitle').innerText = "Yeni Məqalə Əlavə Et";
             document.getElementById('submitBtn').innerText = "Məqaləni Yayınla (Publish)";
@@ -167,13 +157,46 @@
             switchTab('new');
         }
 
+        async function uploadImage(file, token) {
+            const fileName = `images/${Date.now()}-${file.name.replace(/\s+/g, '_')}`;
+            const reader = new FileReader();
+            
+            return new Promise((resolve, reject) => {
+                reader.onload = async function(e) {
+                    const base64Content = e.target.result.split(',')[1];
+                    try {
+                        const res = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${fileName}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Authorization': `token ${token}`,
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                message: `Şəkil yükləndi: ${file.name}`,
+                                content: base64Content,
+                                branch: BRANCH
+                            })
+                        });
+                        if(res.ok) {
+                            resolve(fileName); // Şəkil yolu
+                        } else {
+                            reject(new Error("Şəkil yüklənmədi."));
+                        }
+                    } catch(err) {
+                        reject(err);
+                    }
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
         async function publishArticle() {
             const token = localStorage.getItem('fks_github_token');
             const editFileName = document.getElementById('editFileName').value;
+            const existingImage = document.getElementById('existingImage').value;
             const title = document.getElementById('title').value.trim();
             const category = document.getElementById('category').value;
-            const lang = document.getElementById('lang').value;
-            const image = document.getElementById('image').value.trim();
+            const imageFile = document.getElementById('imageFile').files[0];
             const content = document.getElementById('content').value.trim();
             const statusEl = document.getElementById('status');
 
@@ -183,16 +206,23 @@
                 return;
             }
 
-            // Əgər redaktə ediriksə köhnə adı saxlayırıq, yeni yaradırisə yeni timestamp atırıq
-            const fileName = editFileName ? editFileName : `_posts/${Date.now()}-${lang}.md`;
-            const fileContent = `---\ntitle: "${title}"\ncategory: "${category}"\nimage: "${image}"\nlanguage: "${lang}"\ndate: "${new Date().toISOString()}"\n---\n\n${content}`;
-            const encodedContent = btoa(unescape(encodeURIComponent(fileContent)));
-
             statusEl.style.color = "#eab308";
-            statusEl.innerText = "GitHub-a yazılır və güncəllanir...";
+            statusEl.innerText = "Şəkil və məlumatlar GitHub-a yüklənir...";
 
             try {
-                // Əgər köhnəni dəyişiriksə, mövcud faylın SHA kodunu almaq lazımdır (GitHub tələbidir)
+                let imageUrl = existingImage;
+                if (imageFile) {
+                    imageUrl = await uploadImage(imageFile, token);
+                }
+
+                // Avtomatik olaraq cari tarixi təyin edirik (məsələn: 2026-11-18)
+                const now = new Date();
+                const dateStr = now.toISOString().split('T')[0];
+
+                const fileName = editFileName ? editFileName : `_posts/${Date.now()}.md`;
+                const fileContent = `---\ntitle: "${title}"\ncategory: "${category}"\nimage: "${imageUrl}"\ndate: "${dateStr}"\n---\n\n${content}`;
+                const encodedContent = btoa(unescape(encodeURIComponent(fileContent)));
+
                 let sha = null;
                 if (editFileName) {
                     const getRes = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${fileName}`, {
@@ -257,7 +287,7 @@
                         </div>
                     `).join('');
                 } else {
-                    listEl.innerHTML = "<p style='color:#ef4444;'>_posts qovluğu tapılmadı və ya məqalə yoxdur.</p>";
+                    listEl.innerHTML = "<p style='color:#ef4444;'>_posts qovluğu tapılmadı.</p>";
                 }
             } catch (err) {
                 listEl.innerHTML = "<p style='color:#ef4444;'>Bağlantı xətası.</p>";
@@ -266,39 +296,30 @@
 
         async function editPost(path) {
             const token = localStorage.getItem('fks_github_token');
-            const statusEl = document.getElementById('status');
-            
             try {
                 const response = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`, {
                     headers: { 'Authorization': `token ${token}` }
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    // Base64 məzmunu decode edirik
                     const rawContent = decodeURIComponent(escape(atob(data.content)));
                     
-                    // Frontmatter (---) daxilindəki məlumatları sadə üsulla ayırırıq
                     document.getElementById('editFileName').value = path;
                     
-                    // Title tapmaq
                     const titleMatch = rawContent.match(/title:\s*"([^"]*)"/);
                     if (titleMatch) document.getElementById('title').value = titleMatch[1];
 
-                    // Category tapmaq
                     const catMatch = rawContent.match(/category:\s*"([^"]*)"/);
                     if (catMatch) document.getElementById('category').value = catMatch[1];
 
-                    // Image tapmaq
                     const imgMatch = rawContent.match(/image:\s*"([^"]*)"/);
-                    if (imgMatch) document.getElementById('image').value = imgMatch[1];
+                    if (imgMatch) document.getElementById('existingImage').value = imgMatch[1];
 
-                    // Məzmunu tapmaq (--- blokundan sonrakı hissə)
                     const parts = rawContent.split('---');
                     if (parts.length >= 3) {
                         document.getElementById('content').value = parts.slice(2).join('---').trim();
                     }
 
-                    // Form başlıqlarını dəyişirik
                     document.getElementById('formTitle').innerText = "Məqaləni Düzənlə: " + path.split('/').pop();
                     document.getElementById('submitBtn').innerText = "Dəyişiklikləri Yadda Saxla (Update)";
                     document.getElementById('cancelEditBtn').classList.remove('hidden');
