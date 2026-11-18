@@ -17,11 +17,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:inherit}
 .w{max-width:1060px;margin:0 auto;padding:0 20px;width:100%}
 
-/* Header & Gerçek Logo Resmi İle Uyumlu Alan */
+/* Header & Orijinal Logo İle Birebir Uyumlu Şık Vektör Loqo */
 #top{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 4px rgba(14,34,51,0.08);transition:background-color 0.25s, border-color 0.25s}
 #top .w{display:flex;align-items:center;justify-content:space-between;gap:10px;height:68px;max-width:100%;padding:0 14px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;min-width:0}
-.logo-img{width:42px;height:42px;object-fit:cover;border-radius:8px;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,0.15)}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0;min-width:0}
+.logo-mark{width:40px;height:38px;flex-shrink:0}
 .logo-text{display:flex;flex-direction:column;line-height:0.92;min-width:0}
 .logo-text strong{font-family:Georgia,"Times New Roman",serif;font-weight:800;font-size:22px;color:var(--logo-fks);letter-spacing:0.01em}
 .logo-text span{font-size:9.5px;font-weight:700;letter-spacing:0.35em;color:var(--gold);margin-top:3px;text-transform:uppercase;padding-left:1px}
@@ -172,7 +172,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
   #top nav{gap:8px;font-size:12px}
   .logo-text strong{font-size:19px}
   .logo-text span{font-size:8.5px}
-  .logo-img{width:36px;height:36px}
+  .logo-mark{width:34px;height:32px}
   .w{padding:0 12px}
   .hero h1{font-size:28px}
   .hero p{font-size:16px}
@@ -186,8 +186,26 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
 <header id="top">
   <div class="w">
     <a class="logo" href="#">
-      <!-- Gerçek Logo Şekli (logo.jpg) -->
-      <img class="logo-img" src="logo.jpg" alt="FKS Media Logo">
+      <!-- Orijinal Logo İle Tam Uyumlu Şık Vektör İkon -->
+      <svg class="logo-mark" viewBox="0 0 72 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M36 2L40.5 13.5H31.5L36 2Z" fill="#c5a467"/>
+        <path d="M2 34L13.5 29.5V38.5L2 34Z" fill="#c5a467"/>
+        <path d="M70 34L58.5 38.5V29.5L70 34Z" fill="#c5a467"/>
+        <path d="M36 66L31.5 54.5H40.5L36 66Z" fill="#c5a467"/>
+        <circle cx="36" cy="34" r="22" stroke="#c5a467" stroke-width="2.6"/>
+        <circle cx="36" cy="34" r="18" fill="#143c60"/>
+        <path d="M24 23C27 20 32 19 35 22C37 24 34 27 31 28C28 29 25 27 24 23Z" fill="#d8ecfc" fill-opacity="0.85"/>
+        <path d="M40 21C44 21 49 24 50 29C47 31 44 30 42 27C40 25 38 23 40 21Z" fill="#d8ecfc" fill-opacity="0.85"/>
+        <path d="M23 33C26 32 29 35 28 40C27 44 24 46 22 43C20 39 21 35 23 33Z" fill="#d8ecfc" fill-opacity="0.85"/>
+        <path d="M41 34C45 33 49 36 48 41C46 44 42 43 40 39C39 36 40 35 41 34Z" fill="#d8ecfc" fill-opacity="0.85"/>
+        <ellipse cx="36" cy="34" rx="8.5" ry="18" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.1"/>
+        <line x1="18" y1="34" x2="54" y2="34" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.1"/>
+        <line x1="36" y1="16" x2="36" y2="52" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1.1"/>
+        <path d="M24 46L32.5 30.5L48 22L39.5 37.5L24 46Z" fill="#0b2238" stroke="#ffffff" stroke-width="1.2"/>
+        <circle cx="36" cy="34" r="2.2" fill="#ffffff"/>
+        <path d="M12 50C21 56 34 56 47 49C53 46 58 46 62 48" stroke="#143c60" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M16 56C25 61 38 60.5 50 54C54 52 57 52 60 53" stroke="#c5a467" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
       <div class="logo-text">
         <strong>FKS</strong>
         <span>MEDIA</span>
@@ -357,7 +375,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
         <p>Uluslararası Enerji Ajansı'nın (IEA) Şubat 2026 tarihli verilerine göre, 2025 yılında Hürmüz Boğazı'ndan günlük ortalama 20 milyon varil ham petrol ve petrol ürünü taşındı. Bu miktar, dünya genelindeki deniz yoluyla gerçekleştirilen petrol ticaretinin yaklaşık dörtte birine karşılık geliyor. Katar'ın sıvılaştırılmış doğal gaz (LNG) ihracatı açısından da aynı güzergâhın önemi oldukça yüksek. Dolayısıyla boğazdaki güvenlik sorunu, enerji fiyatlarından nakliye maliyetlerine ve tedarik zincirlerine kadar uzanan sonuçlar doğuruyor.</p>
 
         <h3>Savaşın ardından Hürmüz Boğazı neden müzakerelerin merkezine yerleşti?</h3>
-        <p>Şubat 2026'da ABD ve İsrail'in İran'a yönelik askerî operasyonlarıyla başlayan savaş, Hürmüz Boğazı'ndaki deniz trafiğini ciddi biçimde etkiledi. İran'ın geçişler üzerindeki kontrolü ve ABD'nin İran limanlarına yönelik deniz ablukası, bölgedeki ticari hareketliliği daha karmaşık bir hâle getirdi.</p>
+        <p>Şubat 2026'da ABD ve İsrail'in İran'ın yönelik askerî operasyonlarıyla başlayan savaş, Hürmüz Boğazı'ndaki deniz trafiğini ciddi biçimde etkiledi. İran'ın geçişler üzerindeki kontrolü ve ABD'nin İran limanlarına yönelik deniz ablukası, bölgedeki ticari hareketliliği daha karmaşık bir hâle getirdi.</p>
         <p>Bununla birlikte boğazdaki trafik tamamen durmuş değil. Reuters'ın 11 Kasım tarihli haberine göre, Ekim ayında LNG taşıyan tankerlerin sayısı savaşın başlamasından bu yana en yüksek seviyeye ulaştı. Aynı dönemde gemilere yönelik saldırıların da artması, ticari hareketliliğin yeniden başlaması ile deniz güvenliğinin sağlanmasının birbirinden farklı meseleler olduğunu gösteriyor.</p>
         <p>Bu tablo, tarafların neden Hürmüz Boğazı konusunda uzlaşmakta zorlandığını anlamak açısından önemli. Washington için temel öncelik, uluslararası deniz ticaretinin kesintisiz ve güvenli biçimde devam etmesi. Tahran açısından ise boğaz üzerindeki konumu, ABD'nin ekonomik ve askerî baskısına karşı önemli bir diplomatik müzakere aracı niteliği taşıyor.</p>
 
