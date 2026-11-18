@@ -797,7 +797,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
 
   function buildCardElement(a, cardClass) {
     const t = dict[curLang];
-    const activeBlock = a.querySelector('.art-' + curLang) || a;
+    const activeBlock = a.querySelector('.art-' + curLang) || a.querySelector('div') || a;
     const c = document.createElement('a');
     c.className = cardClass;
     c.href = '#' + a.id;
@@ -805,9 +805,11 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
     const imgSrc = imgEl ? imgEl.src : 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80';
     const cropClass = (imgEl && imgEl.classList.contains('crop-bbc')) ? ' crop-bbc' : '';
     c.innerHTML = '<div class="thumb-wrap"><img class="thumb' + cropClass + '" src="' + imgSrc + '" alt=""></div><span class="tag"></span><h3></h3><p></p><b>' + t.read_more + '</b>';
-    c.querySelector('.tag').textContent = activeBlock.querySelector('.tag').textContent;
-    c.querySelector('h3').textContent = activeBlock.querySelector('h2').textContent;
-    const p = activeBlock.querySelector('figure ~ p') || activeBlock.querySelector('h2 ~ p');
+    const tagEl = activeBlock.querySelector('.tag');
+    const h2El = activeBlock.querySelector('h2');
+    c.querySelector('.tag').textContent = tagEl ? tagEl.textContent : '';
+    c.querySelector('h3').textContent = h2El ? h2El.textContent : '';
+    const p = activeBlock.querySelector('figure ~ p') || activeBlock.querySelector('h2 ~ p') || activeBlock.querySelector('p');
     c.querySelector('p').textContent = p ? p.textContent.slice(0, 145) + '…' : '';
     return c;
   }
@@ -824,6 +826,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
 
   function renderFilters() {
     const f = $('filters');
+    if (!f) return;
     f.innerHTML = '';
     categories.forEach(cat => {
       const btn = document.createElement('button');
@@ -841,6 +844,7 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
 
   function grid() {
     const g = $('grid');
+    if (!g) return;
     g.innerHTML = '';
     let visibleCount = 0;
     const t = dict[curLang];
@@ -911,8 +915,9 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
 
     const t = dict[curLang];
     if (isArticle) {
-      const activeBlock = a.querySelector('.art-' + curLang) || a;
-      document.title = activeBlock.querySelector('h2').textContent + ' · FKS Media';
+      const activeBlock = a.querySelector('.art-' + curLang) || a.querySelector('div') || a;
+      const h2El = activeBlock.querySelector('h2');
+      document.title = (h2El ? h2El.textContent : 'Makale') + ' · FKS Media';
     } else if (isAboutPage) {
       document.title = t.nav_about + ' · FKS Media';
     } else if (isBlogPage) {
@@ -922,7 +927,76 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
     }
   }
 
-  // Canlı Döviz, Altın (XAU) ve Brent Petrol Güncelleyici
+  // Admin panelindən _posts qovluğuna yazılan yeni məqalələri avtomatik oxuyan funksiya
+  async function loadDynamicPosts() {
+    try {
+      const res = await fetch('https://api.github.com/repos/fazilaliyev555-blip/fksmedia/contents/_posts');
+      if (!res.ok) return;
+      const files = await res.json();
+      
+      for (const file of files) {
+        if (!file.name.endsWith('.md')) continue;
+        const fileRes = await fetch(file.download_url);
+        const text = await fileRes.text();
+        
+        const parts = text.split('---');
+        if (parts.length < 3) continue;
+        const frontmatter = parts[1];
+        const body = parts.slice(2).join('---').trim();
+        
+        let title = '', category = 'Orta Doğu', image = '', lang = 'tr', date = '';
+        frontmatter.split('\n').forEach(line => {
+          if (line.startsWith('title:')) title = line.replace('title:', '').trim().replace(/^"|"$/g, '');
+          if (line.startsWith('category:')) category = line.replace('category:', '').trim().replace(/^"|"$/g, '');
+          if (line.startsWith('image:')) image = line.replace('image:', '').trim().replace(/^"|"$/g, '');
+          if (line.startsWith('language:')) lang = line.replace('language:', '').trim().replace(/^"|"$/g, '');
+          if (line.startsWith('date:')) date = line.replace('date:', '').trim().replace(/^"|"$/g, '');
+        });
+        
+        const catMap = {
+          'Orta Doğu': 'orta-dogu',
+          'Türkiye': 'turkiye',
+          'Россия': 'rusya',
+          'Güney Kafkasya': 'guney-kafkasya',
+          'ABD': 'abd',
+          'Avrupa': 'avrupa',
+          'Diplomasi': 'diplomasi',
+          'Ekonomi ve Güvenlik': 'ekonomi'
+        };
+        const catSlug = catMap[category] || 'orta-dogu';
+        const artId = 'dyn-' + file.name.replace('.md', '');
+        if (document.getElementById(artId)) continue;
+        
+        const article = document.createElement('article');
+        article.id = artId;
+        article.dataset.cat = catSlug;
+        article.hidden = true;
+        
+        const langDiv = document.createElement('div');
+        langDiv.className = 'art-' + lang;
+        langDiv.innerHTML = `
+          <span class="tag">${category}</span>
+          <h2>${title}</h2>
+          <figure>
+            <img src="${image || 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80'}" alt="">
+          </figure>
+          <div>${body.split('\n\n').map(p => '<p>' + p + '</p>').join('')}</div>
+          <div class="pub-meta"><span>Yayımlanma Tarihi</span><time>${date.split('T')[0] || '2026'}</time></div>
+        `;
+        article.appendChild(langDiv);
+        document.getElementById('arts').appendChild(article);
+      }
+      
+      renderFilmReel();
+      renderFilters();
+      grid();
+      route();
+    } catch(e) {
+      console.log('Dinamik məqalələr yüklənmədi:', e);
+    }
+  }
+
+  // Canlı Döviz ve Piyasa Güncelleyici
   async function updateMarkets() {
     const fmt = (n, d = 4) => n.toFixed(d).replace('.', ',');
     try {
@@ -958,13 +1032,17 @@ footer{background:var(--dk);color:#9fb0be;font-size:13px;padding:28px 0;margin-t
     btn.addEventListener('click', () => applyLang(btn.dataset.setlang));
   });
 
-  $('theme-toggle').addEventListener('click', () => {
-    applyTheme(curTheme === 'dark' ? 'light' : 'dark');
-  });
+  const themeToggle = $('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      applyTheme(curTheme === 'dark' ? 'light' : 'dark');
+    });
+  }
 
   applyTheme(curTheme);
   applyLang(curLang);
   updateMarkets();
+  loadDynamicPosts(); // Paneldən yazılanları oxuyan funksiya işə düşür
   setInterval(updateMarkets, 300000);
   addEventListener('hashchange', route);
 })();
